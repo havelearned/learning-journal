@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/navigation_recommend"
+        android:icon="@drawable/ic_app_title"
+        android:title="@string/title_recommend" />
+    <item android:id="@+id/navigation_star_ranking"
+        android:icon="@drawable/ic_app_title"
+        android:title="@string/title_star_ranking" />
+    <item android:id="@+id/navigation_box_office"
+        android:icon="@drawable/ic_app_title"
+        android:title="@string/title_box_office" />
+    <item android:id="@+id/navigation_coming_soon"
+        android:icon="@drawable/ic_app_title"
+        android:title="@string/title_coming_soon" />
+
+
+</menu>

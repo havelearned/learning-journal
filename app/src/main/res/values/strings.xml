@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">肌哩肌哩</string>
+
+    <!--top_nav_menu.xml-->
+    <string name="title_show">首页</string>
+    <string name="title_movie">电影院</string>
+    <string name="title_dynamic">动态</string>
+    <string name="title_my">我的</string>
+
+    <!--bottom_nav_menu.xml-->
+
+    <!--top_nav_menu.xml-->
+    <string name="title_recommend">推荐</string>
+    <string name="title_star_ranking">明星排行</string>
+    <string name="title_box_office">票房</string>
+    <string name="title_coming_soon">即将上映</string>
+
+    <!--title-->
+    <string name="title_search">搜索</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Noticethenumber">1</string>
+</resources>

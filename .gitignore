@@ -1,40 +1,16 @@
-
-#以这样的结尾不需要提交到远程
-*.class
-*.log
-*.lock
-
-#包文件 不提交到远程
-*.jar
-*.war
-*.ear
-target/
-/build
-
-#idea 自带文件不需要提交到远程
-.idea
 *.iml
-
-#包含了下面的字符文件不需要提交到远程
-*velocity.log*
-
-# STS 编译器文件过滤
-.apt_generated
-.factorypath
-.springBeans
-
-# Idea
-*.iml
-*.ipr
-*.iws
-.idea
-.classpath
-.project
-.settings/
-.bin/
-*.log
 tmp/
-
-#rebel
-*rebel.xml*
-
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
