@@ -8,46 +8,25 @@
     <!--navigation_-->
     <fragment
         android:id="@+id/navigation_show"
-        android:name="com.yinghua.myapplication.ui.view.bottom.show.ShowFragment"
+        android:name="com.yinghua.viewpager.bottom.show.ShowFragment"
         android:label="@string/title_show"
-        tools:layout="@layout/fragment_show" >
-        <action
-            android:id="@+id/action_showFragment_to_recommendFragment"
-            app:destination="@id/navigation_recommend" />
-    </fragment>
+        tools:layout="@layout/fragment_show" />
 
     <fragment
-        android:id="@+id/navigation_recommend"
-        android:name="com.yinghua.myapplication.ui.view.bottom.recommend.RecommendFragment"
-        android:label="@string/title_recommend"
-        tools:layout="@layout/fragment_recommend" >
-        <action
-            android:id="@+id/action_recommendFragment_to_showFragment"
-            app:destination="@id/navigation_show" />
-    </fragment>
-    <fragment
         android:id="@+id/navigation_movie"
-        android:name="com.yinghua.myapplication.ui.view.bottom.moive.MovieFragment"
+        android:name="com.yinghua.viewpager.bottom.moive.MovieFragment"
         android:label="@string/title_movie"
         tools:layout="@layout/fragment_movie" />
     <fragment
         android:id="@+id/navigation_dynamic"
-        android:name="com.yinghua.myapplication.ui.view.bottom.dynamic.DynamicFragment"
+        android:name="com.yinghua.viewpager.bottom.dynamic.DynamicFragment"
         android:label="@string/title_dynamic"
         tools:layout="@layout/fragment_dynamic" />
+
     <fragment
-        android:id="@+id/navigation_box_office"
-        android:name="com.yinghua.myapplication.ui.view.top.boxoffice.BoxofficeFragment"
-        android:label="@string/title_box_office"
-        tools:layout="@layout/fragment_boxoffice" />
-    <fragment
-        android:id="@+id/navigation_coming_soon"
-        android:name="com.yinghua.myapplication.ui.view.top.comingsoon.ComingSoonFragment"
-        android:label="@string/title_coming_soon"
-        tools:layout="@layout/fragment_coming_soon" />
-    <fragment
-        android:id="@+id/navigation_star_ranking"
-        android:name="com.yinghua.myapplication.ui.view.top.starrnaking.StrrnaKingFragment"
-        android:label="@string/title_star_ranking"
-        tools:layout="@layout/fragment_strrnaking" />
+        android:id="@+id/navigation_my"
+        android:name="com.yinghua.viewpager.bottom.my.MyFragment"
+        android:label="@string/title_my"
+        tools:layout="@layout/fragment_my" />
+
 </navigation>
