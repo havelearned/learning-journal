@@ -1,73 +1,59 @@
 package com.yinghua.viewpager.bean;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Movie {
-    private String mId;//电影id
-    private String mDirector;//电影名称
-    private String mMovieName;//导演
-    private String mProtagonist;//主演
-    private String mSupport;//配角
-    private String mScreen; //日期
+    private String mDirector;
 
-    @Override
-    public String toString() {
-        return "Movie{" +
-                "mId='" + mId + '\'' +
-                ", mDirector='" + mDirector + '\'' +
-                ", mMovieName='" + mMovieName + '\'' +
-                ", mProtagonist='" + mProtagonist + '\'' +
-                ", mSupport='" + mSupport + '\'' +
-                ", mScreen='" + mScreen + '\'' +
-                '}';
+    private int mId;
+
+    private String mMovieName;
+
+    private String mProtagonist;
+
+    private long mScreen;
+
+    private String mSupport;
+
+    public void setMDirector(String mDirector) {
+        this.mDirector = mDirector;
     }
-
-    public Movie() {
-    }
-
-    public String getmId() {
-        return mId;
-    }
-
-    public void setmId(String mId) {
-        this.mId = mId;
-    }
-
-    public String getmDirector() {
+    public String getMDirector() {
         return mDirector;
     }
 
-    public void setmDirector(String mDirector) {
-        this.mDirector = mDirector;
+    public void setMId(int mId) {
+        this.mId = mId;
+    }
+    public int getMId() {
+        return mId;
     }
 
-    public String getmMovieName() {
+    public void setMMovieName(String mMovieName) {
+        this.mMovieName = mMovieName;
+    }
+    public String getMMovieName() {
         return mMovieName;
     }
 
-    public void setmMovieName(String mMovieName) {
-        this.mMovieName = mMovieName;
+    public void setMProtagonist(String mProtagonist) {
+        this.mProtagonist = mProtagonist;
     }
-
-    public String getmProtagonist() {
+    public String getMProtagonist() {
         return mProtagonist;
     }
 
-    public void setmProtagonist(String mProtagonist) {
-        this.mProtagonist = mProtagonist;
+    public void setMScreen(long mScreen) {
+        this.mScreen = mScreen;
     }
-
-    public String getmSupport() {
-        return mSupport;
-    }
-
-    public void setmSupport(String mSupport) {
-        this.mSupport = mSupport;
-    }
-
-    public String getmScreen() {
+    public long getMScreen() {
         return mScreen;
     }
 
-    public void setmScreen(String mScreen) {
-        this.mScreen = mScreen;
+    public void setMSupport(String mSupport) {
+        this.mSupport = mSupport;
+    }
+    public String getMSupport() {
+        return mSupport;
     }
 }

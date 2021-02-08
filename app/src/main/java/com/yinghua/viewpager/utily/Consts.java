@@ -4,6 +4,9 @@ package com.yinghua.viewpager.utily;
  * 全局常量名
  */
 public class Consts {
+
+    public static final String TAG="MyApp";
+
     public static final int GET = 1;
     public static final int POST = 2;
     public static final int PUT = 3;
@@ -13,7 +16,10 @@ public class Consts {
     public static final int movieId = 0;
 
     //访问服务器获取数据
-    public static final String DDSP_URL = "http://121.196.106.152:9999/DDSYSystem/";
+    public static final String DDSP_URL = "http://121.196.106.152:9999/";
+
+    public static final String DDSP_URL_MOVIE2 = "/DDSYSystem/modelmmovie";//获取影片
+
     public static final String DDSP_URL_MOVIE = "http://121.196.106.152:9999/DDSYSystem/modelmmovie";//获取影片
     public static final String DDSP_URL_CINEMA = "http://121.196.106.152:9999/DDSYSystem/modelcinema";//获取电影院
     public static final String DDSP_URL_ORDERFORGOODS = "http://121.196.106.152:9999/DDSYSystem/modelorderforgoodsService";//获取订单

@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel;
 
 import com.yinghua.viewpager.bean.Cinema;
 import com.yinghua.viewpager.callback.CinemaCallback;
-import com.yinghua.viewpager.utily.Networkdataacquisition;
 
 import java.util.List;
 

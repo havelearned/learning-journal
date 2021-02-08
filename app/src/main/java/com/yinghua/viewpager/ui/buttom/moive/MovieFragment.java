@@ -17,12 +17,11 @@ import com.yinghua.viewpager.R;
 
 public class MovieFragment extends Fragment {
 
-    private MovieViewModel movieViewModel;
+    private CinemaViewModel movieViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        movieViewModel =
-                new ViewModelProvider(this).get(MovieViewModel.class);
+        movieViewModel = new ViewModelProvider(this).get(CinemaViewModel.class);
         View root = inflater.inflate(R.layout.fragment_movie, container, false);
         final TextView textView = root.findViewById(R.id.text_movie);
         movieViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
