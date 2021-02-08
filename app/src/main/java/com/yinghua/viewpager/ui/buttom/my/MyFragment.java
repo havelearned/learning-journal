@@ -1,4 +1,4 @@
-package com.yinghua.viewpager.bottom.my;
+package com.yinghua.viewpager.ui.buttom.my;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

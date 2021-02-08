@@ -4,16 +4,22 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.yinghua.viewpager.bean.Cinema;
+import com.yinghua.viewpager.callback.CinemaCallback;
+import com.yinghua.viewpager.utily.Networkdataacquisition;
+
+import java.util.List;
+
 public class RecommendViewModel extends ViewModel {
     private MutableLiveData<String> mText;
-
     private MutableLiveData<Integer> count;
 
     public RecommendViewModel() {
         mText = new MutableLiveData<>();
         count = new MutableLiveData<>();
-        mText.setValue("This is ShowFragment fragment");
+
         count.setValue(0);
+        mText.setValue("This is ShowFragment fragment");
     }
 
     public LiveData<String> getText() {

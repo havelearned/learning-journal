@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.yinghua.viewpager.bottom.dynamic.DynamicFragment">
+    tools:context=".ui.buttom.dynamic.DynamicFragment">
 
     <TextView
         android:id="@+id/text_dynamic"
@@ -18,8 +18,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button4"

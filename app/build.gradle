@@ -29,6 +29,20 @@ android {
 }
 
 dependencies {
+    //paging分页库
+    def paging_version = "2.1.2"
+    implementation "androidx.paging:paging-runtime:$paging_version"
+
+
+
+    //阿里巴巴json
+    implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.51'
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+    // okhttp    'com.lzy.net:okhttpserver:1.0.3' //扩展了下载管理和上传管理，根据需要添加
+    implementation 'com.zhy:okhttputils:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+
 
     //下拉刷新
     compile 'com.baoyz.pullrefreshlayout:library:1.2.0'

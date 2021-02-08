@@ -1,15 +1,15 @@
-package com.yinghua.viewpager.bottom.moive;
+package com.yinghua.viewpager.ui.buttom.my;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class MovieViewModel extends ViewModel {
+public class MyViewModel extends ViewModel {
     private MutableLiveData<String> mText;
 
-    public MovieViewModel() {
+    public MyViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is MovieViewModel fragment");
+        mText.setValue("This is MyViewModel fragment");
     }
 
     public LiveData<String> getText() {

@@ -8,24 +8,24 @@
     <!--navigation_-->
     <fragment
         android:id="@+id/navigation_show"
-        android:name="com.yinghua.viewpager.bottom.show.ShowFragment"
+        android:name="com.yinghua.viewpager.ui.buttom.show.ShowFragment"
         android:label="@string/title_show"
         tools:layout="@layout/fragment_show" />
 
     <fragment
         android:id="@+id/navigation_movie"
-        android:name="com.yinghua.viewpager.bottom.moive.MovieFragment"
+        android:name="com.yinghua.viewpager.ui.buttom.moive.MovieFragment"
         android:label="@string/title_movie"
         tools:layout="@layout/fragment_movie" />
     <fragment
         android:id="@+id/navigation_dynamic"
-        android:name="com.yinghua.viewpager.bottom.dynamic.DynamicFragment"
+        android:name="com.yinghua.viewpager.ui.buttom.dynamic.DynamicFragment"
         android:label="@string/title_dynamic"
         tools:layout="@layout/fragment_dynamic" />
 
     <fragment
         android:id="@+id/navigation_my"
-        android:name="com.yinghua.viewpager.bottom.my.MyFragment"
+        android:name="com.yinghua.viewpager.ui.buttom.my.MyFragment"
         android:label="@string/title_my"
         tools:layout="@layout/fragment_my" />
 

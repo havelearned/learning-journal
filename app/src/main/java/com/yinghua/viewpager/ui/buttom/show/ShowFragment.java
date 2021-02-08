@@ -1,4 +1,4 @@
-package com.yinghua.viewpager.bottom.show;
+package com.yinghua.viewpager.ui.buttom.show;
 
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
@@ -29,8 +29,8 @@ import com.yinghua.viewpager.ui.top.starrnaking.StrrnaKingFragment;
  * 首先默认选中推荐的Fragment 数据都在 推荐的页面中
  * 这个页面是头部的头像 搜索 。。 和 ViewPager2 导航工具页面
  * 底部的 首页 电影院 。。。 是activity_main.xml管理
- * */
-public class ShowFragment extends Fragment  {
+ */
+public class ShowFragment extends Fragment {
 
     ViewPager2 viewPager2;
     TabLayout tableLayout;
@@ -39,10 +39,11 @@ public class ShowFragment extends Fragment  {
 
     //创建者Fragment是执行的方法
     public View onCreateView(@NonNull LayoutInflater inflater,
-        ViewGroup container, Bundle savedInstanceState) { showViewModel =new ViewModelProvider(this).get(ShowViewModel.class);
+                             ViewGroup container, Bundle savedInstanceState) {
+        showViewModel = new ViewModelProvider(this).get(ShowViewModel.class);
         //获取视图对象，最后 return
         View root = inflater.inflate(R.layout.fragment_show, container, false);
-        ObjectAnimator.ofFloat(root.findViewById(R.id.touxing),"scaleX",1.4f,1f).setDuration(3000).start();
+        ObjectAnimator.ofFloat(root.findViewById(R.id.touxing), "scaleX", 1.4f, 1f).setDuration(3000).start();
         //Navigation通过反射获取页面这个组件执行，更具这个组件导航到相应的Fragment
         final TextView textView = root.findViewById(R.id.text_show);
         showViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {

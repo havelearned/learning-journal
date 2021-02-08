@@ -1,4 +1,4 @@
-package com.yinghua.viewpager.bottom.moive;
+package com.yinghua.viewpager.ui.buttom.dynamic;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,17 +15,16 @@ import androidx.lifecycle.ViewModelProvider;
 import com.yinghua.viewpager.R;
 
 
-public class MovieFragment extends Fragment {
-
-    private MovieViewModel movieViewModel;
+public class DynamicFragment extends Fragment {
+    private DynamicViewModel dynamicViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        movieViewModel =
-                new ViewModelProvider(this).get(MovieViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_movie, container, false);
-        final TextView textView = root.findViewById(R.id.text_movie);
-        movieViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        dynamicViewModel =
+                new ViewModelProvider(this).get(DynamicViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_dynamic, container, false);
+        final TextView textView = root.findViewById(R.id.text_dynamic);
+        dynamicViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
