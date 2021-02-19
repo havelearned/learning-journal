@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cinema_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/cinema_image"
+        android:layout_width="163dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_app_indexmain_bg" />
+
+    <TextView
+        android:id="@+id/tv_Name"
+        android:layout_width="224dp"
+        android:layout_height="30dp"
+        android:gravity="center_horizontal"
+        android:text="电影院名称"
+        android:textColor="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/cinema_image"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_MovieName"
+        android:layout_width="224dp"
+        android:layout_height="64dp"
+        android:text="正在热播：xxxxx"
+        android:gravity="center"
+        android:textColor="#EF0404"
+        app:layout_constraintStart_toEndOf="@+id/cinema_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Name" />
+
+    <TextView
+        android:id="@+id/tv_sum"
+        android:layout_width="224dp"
+        android:layout_height="32dp"
+        android:text="当前在线人数：666"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/cinema_image"
+        app:layout_constraintTop_toBottomOf="@+id/tv_MovieName" />
+</androidx.constraintlayout.widget.ConstraintLayout>

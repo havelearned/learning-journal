@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.yinghua.viewpager"
+        applicationId 'com.yinghua.jilijili'
         minSdkVersion 16
         targetSdkVersion 30
         versionCode 1
@@ -26,13 +26,33 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets{
+        main{
+            jniLibs.srcDirs=['libs']
+        }
+    }
 }
 
 dependencies {
 
+
+    //百度地图
+    implementation files('libs\\BaiduLBS_Android.jar')
+
+
+
+    //safe args
+
+    apply plugin: "androidx.navigation.safeargs"
+
     //glide的依赖
     implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
+
+    /**
+     * 网络请求
+     * */
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
@@ -59,7 +79,6 @@ dependencies {
     implementation 'androidx.viewpager2:viewpager2:1.0.0-beta02'
 // https://mvnrepository.com/artifact/com.google.android.material/material
     implementation group: 'com.google.android.material', name: 'material', version: '1.2.1'
-
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'

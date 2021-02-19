@@ -22,6 +22,13 @@
     <string name="Noticethenumber">1</string>
     <string name="ViewDetails">查看详情</string>
     <string name="Film_Types">影片类型</string>
+    <string name="login_name">请输入手机号</string>
+    <string name="login_password">请输入密码</string>
+    <string name="login_login">登录</string>
+    <string name="login_newUser">注册</string>
+    <string name="login_email">邮箱登录</string>
+    <string name="login_tvPassword">密码</string>
+    <string name="login_tvName">账号</string>
 
 
 </resources>

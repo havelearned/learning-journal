@@ -58,6 +58,7 @@
             />
 
         <ImageButton
+            android:id="@+id/app_search"
             android:layout_width="250dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
@@ -88,15 +89,6 @@
 
 
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/text_show"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        tools:layout_editor_absoluteX="4dp"
-        tools:layout_editor_absoluteY="4dp" />
 
 
     <com.google.android.material.tabs.TabLayout

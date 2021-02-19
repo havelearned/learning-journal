@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/login_TickeyFragment">
+    <fragment
+        android:id="@+id/login_TickeyFragment"
+        android:name="com.yinghua.jilijili.ui.login.Login_TickeyFragment"
+        android:label="fragment_login__tickey"
+        tools:layout="@layout/fragment_login__tickey" >
+        <action
+            android:id="@+id/action_login_TickeyFragment_to_login_EmailFragment"
+            app:destination="@id/login_EmailFragment"
+            app:enterAnim="@anim/silde_to_relet"
+            app:exitAnim="@anim/silde_to_relet" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_EmailFragment"
+        android:name="com.yinghua.jilijili.ui.login.Login_EmailFragment"
+        android:label="fragment_login__email"
+        tools:layout="@layout/fragment_login__email" >
+        <action
+            android:id="@+id/action_login_EmailFragment_to_login_TickeyFragment"
+            app:destination="@id/login_TickeyFragment"
+            app:enterAnim="@anim/silde_to_left" />
+    </fragment>
+</navigation>

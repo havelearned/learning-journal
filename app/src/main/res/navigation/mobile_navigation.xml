@@ -8,25 +8,63 @@
     <!--navigation_-->
     <fragment
         android:id="@+id/navigation_show"
-        android:name="com.yinghua.viewpager.ui.buttom.show.ShowFragment"
+        android:name="com.yinghua.jilijili.ui.buttom.show.ShowFragment"
         android:label="@string/title_show"
-        tools:layout="@layout/fragment_show" />
+        tools:layout="@layout/fragment_show" >
+        <action
+            android:id="@+id/action_navigation_show_to_navigation_movie"
+            app:destination="@id/navigation_movie"
+            app:enterAnim="@anim/silde_to_relet" />
+        <action
+            android:id="@+id/action_navigation_show_to_reommend_Movie_Info2"
+            app:destination="@id/reommend_Movie_Info2" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_movie"
-        android:name="com.yinghua.viewpager.ui.buttom.moive.MovieFragment"
+        android:name="com.yinghua.jilijili.ui.buttom.moive.CinemaFragment"
         android:label="@string/title_movie"
-        tools:layout="@layout/fragment_movie" />
+        tools:layout="@layout/fragment_movie" >
+        <action
+            android:id="@+id/action_navigation_movie_to_navigation_dynamic"
+            app:destination="@id/navigation_dynamic" />
+        <action
+            android:id="@+id/action_navigation_movie_to_navigation_show"
+            app:destination="@id/navigation_show" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_dynamic"
-        android:name="com.yinghua.viewpager.ui.buttom.dynamic.DynamicFragment"
+        android:name="com.yinghua.jilijili.ui.buttom.dynamic.DynamicFragment"
         android:label="@string/title_dynamic"
-        tools:layout="@layout/fragment_dynamic" />
+        tools:layout="@layout/fragment_dynamic" >
+        <action
+            android:id="@+id/action_navigation_dynamic_to_navigation_my"
+            app:destination="@id/navigation_my"
+            app:enterAnim="@anim/silde_to_relet" />
+        <action
+            android:id="@+id/action_navigation_dynamic_to_navigation_movie"
+            app:destination="@id/navigation_movie" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_my"
-        android:name="com.yinghua.viewpager.ui.buttom.my.MyFragment"
+        android:name="com.yinghua.jilijili.ui.buttom.my.MyFragment"
         android:label="@string/title_my"
-        tools:layout="@layout/fragment_my" />
+        tools:layout="@layout/fragment_my" >
+        <action
+            android:id="@+id/action_navigation_my_to_navigation_show"
+            app:destination="@id/navigation_show"
+            app:enterAnim="@anim/silde_to_relet" />
+    </fragment>
+    <fragment
+        android:id="@+id/reommend_Movie_Info2"
+        android:name="com.yinghua.jilijili.ui.top.recommend.Reommend_Movie_Info"
+        android:label="fragment_reommend__movie__info"
+        tools:layout="@layout/fragment_reommend__movie__info" />
+    <activity
+        android:id="@+id/localhostActivity"
+        android:name="com.yinghua.jilijili.LocalhostActivity"
+        android:label="activity_localhost"
+        tools:layout="@layout/activity_localhost" />
 
 </navigation>

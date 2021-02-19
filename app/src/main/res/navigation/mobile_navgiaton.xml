@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navgiaton"
+    app:startDestination="@id/recommend_movide">
+    <fragment
+        android:id="@+id/recommend_movide"
+        android:name="com.yinghua.jilijili.ui.top.recommend.Recommend_movide"
+        android:label="fragment_recommend_movide"
+        tools:layout="@layout/fragment_recommend_movide" >
+        <action
+            android:id="@+id/action_recommend_movide_to_reommend_Movie_Info"
+            app:destination="@id/reommend_Movie_Info" />
+        <action
+            android:id="@+id/action_recommend_movide_to_testFragment2"
+            app:destination="@id/testFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/reommend_Movie_Info"
+        android:name="com.yinghua.jilijili.ui.top.recommend.Reommend_Movie_Info"
+        android:label="fragment_reommend__movie__info"
+        tools:layout="@layout/fragment_reommend__movie__info" >
+        <action
+            android:id="@+id/action_reommend_Movie_Info_to_reommend_Movie_Order"
+            app:destination="@id/reommend_Movie_Order" />
+        <action
+            android:id="@+id/action_reommend_Movie_Info_to_recommend_movide"
+            app:destination="@id/recommend_movide" />
+    </fragment>
+    <fragment
+        android:id="@+id/reommend_Movie_Order"
+        android:name="com.yinghua.jilijili.ui.top.recommend.Reommend_Movie_Order"
+        android:label="fragment_reommend__movie__order"
+        tools:layout="@layout/fragment_reommend__movie__order" >
+        <action
+            android:id="@+id/action_reommend_Movie_Order_to_reommend_Movie_Info"
+            app:destination="@id/reommend_Movie_Info" />
+    </fragment>
+    <fragment
+        android:id="@+id/testFragment2"
+        android:name="com.yinghua.jilijili.TestFragment"
+        android:label="test_fragment"
+        tools:layout="@layout/test_fragment" />
+    <activity
+        android:id="@+id/testActivity"
+        android:name="com.yinghua.jilijili.MovieInfo"
+        android:label="activity_test"
+        tools:layout="@layout/activity_test" />
+</navigation>
