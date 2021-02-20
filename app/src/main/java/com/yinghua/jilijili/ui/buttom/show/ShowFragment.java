@@ -63,7 +63,7 @@ public class ShowFragment extends Fragment {
     }
 
     private void appSearch(View root) {
-        app_search=root.findViewById(R.id.app_search);
+        app_search = root.findViewById(R.id.app_search);
         app_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,12 +73,12 @@ public class ShowFragment extends Fragment {
     }
 
     private void ImageOnclick(View root) {
-        touxing =root.findViewById(R.id.touxing);
+        touxing = root.findViewById(R.id.touxing);
 
         touxing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController= Navigation.findNavController(v);
+                NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.navigation_my);
             }
         });

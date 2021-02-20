@@ -79,7 +79,13 @@ public class MoviePageListAdapter extends PagedListAdapter<Movie, MoviePageListA
             holder.button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String[] strarr = {movie.getMScreen() + "", movie.getMProtagonist(), movie.getMDirector(), movie.getMMovieName(), movie.getMSupport(),movie.getPhoto().getP_photo()};
+                    String[] strarr = {movie.getMScreen() + "",
+                            movie.getMProtagonist(),
+                            movie.getMDirector(),
+                            movie.getMMovieName(),
+                            movie.getMSupport(),
+                            movie.getPhoto().getP_photo(),
+                            movie.getmDesc()};
                     Bundle bundle = new Bundle();
                     bundle.putStringArray("movie",strarr);
                     NavController navController=Navigation.findNavController(v);

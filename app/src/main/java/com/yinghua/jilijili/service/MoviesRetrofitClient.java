@@ -1,5 +1,6 @@
 package com.yinghua.jilijili.service;
 
+import com.yinghua.jilijili.bean.Ticket;
 import com.yinghua.jilijili.utily.Consts;
 
 import retrofit2.Retrofit;

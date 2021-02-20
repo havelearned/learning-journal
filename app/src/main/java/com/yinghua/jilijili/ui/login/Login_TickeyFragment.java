@@ -1,6 +1,8 @@
 package com.yinghua.jilijili.ui.login;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,6 +26,9 @@ import com.yinghua.jilijili.bean.Ticket;
 import com.yinghua.jilijili.service.MoviesRetrofitClient;
 import com.yinghua.jilijili.utily.Consts;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -44,12 +49,14 @@ public class Login_TickeyFragment extends Fragment {
 
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_login__tickey, container, false);
         inItView(view);
+        OnlickReg(view);
         Glide.with(this).load("https://goss2.cfp.cn/creative/vcg/800/new/VCG211292029131.gif").into(login_back);
 
 
@@ -66,24 +73,36 @@ public class Login_TickeyFragment extends Fragment {
             public void onClick(View v) {
                 String login_name1 = login_Name.getText().toString().trim();
                 String login_password1 = login_password.getText().toString().trim();
-                if (login_name1.equals("") || login_name1.length()!=11) {
+                if (login_name1.equals("") || login_name1.length() != 11) {
                     Toast.makeText(getContext(), "不正确的手机号", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if (login_password1.equals("") || login_password1.length()<6||login_password1.length()>16) {
+                if (login_password1.equals("") || login_password1.length() < 6 || login_password1.length() > 16) {
                     Toast.makeText(getContext(), "不正确的密码", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 sendRequestLogin(login_name1, login_password1);
-                onDestroy();
 
             }
         });
 
         login_email.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_TickeyFragment_to_login_EmailFragment));
+
+        //注册信息返回
+        regBreak();
         return view;
 
 
+    }
+
+    private void regBreak() {
+        Bundle arguments = getArguments();
+        if (arguments == null) {
+            Log.e(Consts.TAG, "s注册信息传回来是空的");
+        } else {
+            String tel = arguments.getString("tel");
+            login_Name.setText(tel);
+        }
     }
 
     private void sendRequestLogin(String login_name, String login_password) {
@@ -95,18 +114,20 @@ public class Login_TickeyFragment extends Fragment {
                     public void onResponse(Call<Ticket> call, Response<Ticket> response) {
                         Ticket ticket = response.body();
                         Log.e(Consts.TAG, "sendRequestLogin_请求成功:" + response.body());
-                        Log.e(Consts.TAG, "sendRequestLogin_请求成功:" + response.raw());
+                        Log.e(Consts.TAG, "sendRequestLogin_请求成功:" + login_name + "=====" + ticket.gettCard());
+                        if (login_name.equals(ticket.gettPhone()) && login_password.equals(ticket.gettCard())) {
 
-                        Log.e(Consts.TAG, "sendRequestLogin_请求成功:" + login_name+"====="+ticket.gettPhone());
-                        if(login_name.equals(ticket.gettPhone())){
+                            //启动
                             Intent intent = new Intent(getActivity(), MainActivity.class);
+
+                            intent.putExtra("tel", login_name);
+                            intent.putExtra("newDate", new SimpleDateFormat("yyyy-dd-MM HH:mm").format(new Date()));
                             startActivity(intent);
+                            getActivity().finish();
 
-                        }else{
-                            Toast.makeText(getContext(),"账号或密码错误！",Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(getContext(), "账号或密码错误！", Toast.LENGTH_SHORT).show();
                         }
-                        return ;
-
                     }
 
                     @Override
@@ -132,5 +153,10 @@ public class Login_TickeyFragment extends Fragment {
 
         login_newUser = view.findViewById(R.id.login_newUser);
         login_email = view.findViewById(R.id.login_email);
+    }
+
+
+    public void OnlickReg(View view) {
+        login_newUser.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_login_TickeyFragment_to_login_RegFragment));
     }
 }

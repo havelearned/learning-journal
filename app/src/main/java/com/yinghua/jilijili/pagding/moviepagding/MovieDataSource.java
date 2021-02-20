@@ -17,7 +17,7 @@ import retrofit2.Response;
 
 public class MovieDataSource extends PositionalDataSource<Movie> {
     int start = 0;
-    public static int PGE = 5;
+    public static int PGE = 10;
 
     @Override
     public void loadInitial(@NonNull LoadInitialParams params, @NonNull LoadInitialCallback<Movie> callback) {
@@ -29,7 +29,7 @@ public class MovieDataSource extends PositionalDataSource<Movie> {
                     public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
                         if (response.body() != null) {
 
-                            Log.e(Consts.TAG, "loadInitial_请求成功" + response.body());
+                            Log.e(Consts.TAG, "loadInitial_请求成功" + response.raw());
                             System.out.println(response.toString());
                             callback.onResult(response.body(),0);
                         }
@@ -48,12 +48,12 @@ public class MovieDataSource extends PositionalDataSource<Movie> {
 
         MoviesRetrofitClient.getInstance()
                 .movieService()
-                .getAllMovies(params.startPosition, PGE)
+                .getAllMovies(0, PGE)
                 .enqueue(new Callback<List<Movie>>() {
                     @Override
                     public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
                         if (response.body() != null) {
-                            Log.e(Consts.TAG, "loadInitial_请求成功" + response.body());
+                            Log.e(Consts.TAG, "loadInitial_请求成功" + response.raw());
                             callback.onResult(response.body());
                         }
                     }

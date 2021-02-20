@@ -1,67 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.Login_EmailFragment">
-
     <ImageView
         android:id="@+id/login_email_back"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:scaleType="centerCrop"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/purple_500"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/login_email_breack"
+                android:layout_width="40sp"
+                android:layout_height="40sp"
+                android:background="@drawable/ic_baseline_arrow_back_ios_24"
+                android:backgroundTint="@color/black" />
+
+            <TextView
+                android:id="@+id/reg_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="邮箱登录"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
 
     <EditText
         android:id="@+id/login_email_name"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
+        android:background="@drawable/round_corners_bg"
+        android:drawableStart="@drawable/ic_baseline_alternate_email_24"
+        android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
         android:drawableEnd="@drawable/ic_baseline_clear_24"
         android:drawableRight="@drawable/ic_baseline_clear_24"
         android:ems="10"
-        android:hint="请求输入邮箱地址"
+        android:hint="请输入邮箱地址"
         android:inputType="textPersonName"
+        android:selectAllOnFocus="true"
         android:textColor="#000000"
         android:textColorHint="#918A8A"
-        android:background="@drawable/round_corners_bg"
-        android:selectAllOnFocus="true"
-        android:textScaleX="1.2"
-        android:drawableLeft="@drawable/ic_baseline_alternate_email_24"
 
+        android:textScaleX="1.2"
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.61"
-        android:drawableStart="@drawable/ic_baseline_alternate_email_24" />
+        app:layout_constraintVertical_bias="0.61" />
 
     <EditText
         android:id="@+id/login_email_password"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
-        android:textSize="15sp"
+        android:background="@drawable/round_corners_bg"
+        android:drawableStart="@drawable/ic_baseline_verified_user_24"
+        android:drawableLeft="@drawable/ic_baseline_verified_user_24"
         android:ems="10"
-        android:hint="请求输入验证码"
+        android:hint="请输入验证码"
+        android:inputType="numberPassword"
+        android:selectAllOnFocus="true"
         android:textColor="#000000"
         android:textColorHint="#918A8A"
-        android:background="@drawable/round_corners_bg"
-        android:selectAllOnFocus="true"
-        android:textScaleX="1.2"
-        android:drawableLeft="@drawable/ic_baseline_verified_user_24"
 
-        android:inputType="numberPassword"
+        android:textScaleX="1.2"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736"
-        android:drawableStart="@drawable/ic_baseline_verified_user_24" />
+        app:layout_constraintVertical_bias="0.736" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -90,18 +126,15 @@
         app:srcCompat="@drawable/ic_app_email" />
 
     <Button
-        android:id="@+id/login_email_tvPassword"
-
+        android:id="@+id/login_email_Verification"
         android:layout_width="wrap_content"
-        android:layout_height="50sp"
-        android:layout_marginBottom="124dp"
+        android:layout_height="49dp"
         android:gravity="center"
         android:text="验证码获取"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/login_password" />
+        app:layout_constraintBottom_toBottomOf="@+id/login_email_password"
+        app:layout_constraintStart_toEndOf="@+id/login_email_password"
+        app:layout_constraintTop_toTopOf="@+id/login_email_password" />
 
     <Button
         android:id="@+id/login_email_newUser"
@@ -122,15 +155,5 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
-
-    <ImageButton
-        android:id="@+id/login_email_breack"
-        android:layout_width="40sp"
-        android:layout_height="40sp"
-
-        android:background="@drawable/ic_baseline_arrow_back_ios_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

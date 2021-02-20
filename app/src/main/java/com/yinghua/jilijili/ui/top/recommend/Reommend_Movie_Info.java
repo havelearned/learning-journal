@@ -38,18 +38,17 @@ public class Reommend_Movie_Info extends Fragment {
         if (arguments != null) {
             String[] movies = arguments.getStringArray("movies");
 
-
             for (int i = 0; i < movies.length; i++) {
                 text1_Movie_info_info.setText(movies[1]);
                 text2_Movie_info_info.setText(movies[4]);
                 text3_Movie_info_in.setText(movies[2]);
-                brief.setText("阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴阿巴");//简介下标 3
+                brief.setText(movies[6]);//简介下标 3
                 Log.e(Consts.TAG, movies[i] + "---->" + i);
             }
-            Toast.makeText(getContext(), Arrays.toString(movies), Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getContext(), "获取的为空", Toast.LENGTH_SHORT).show();
+
         }
+
 
         return v;
     }

@@ -14,6 +14,9 @@
             app:destination="@id/login_EmailFragment"
             app:enterAnim="@anim/silde_to_relet"
             app:exitAnim="@anim/silde_to_relet" />
+        <action
+            android:id="@+id/action_login_TickeyFragment_to_login_RegFragment"
+            app:destination="@id/login_RegFragment" />
     </fragment>
     <fragment
         android:id="@+id/login_EmailFragment"
@@ -24,5 +27,17 @@
             android:id="@+id/action_login_EmailFragment_to_login_TickeyFragment"
             app:destination="@id/login_TickeyFragment"
             app:enterAnim="@anim/silde_to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/login_RegFragment"
+        android:name="com.yinghua.jilijili.ui.login.Login_RegFragment"
+        android:label="fragment_login__reg"
+        tools:layout="@layout/fragment_login__reg" >
+        <action
+            android:id="@+id/action_login_RegFragment_to_login_TickeyFragment"
+            app:destination="@id/login_TickeyFragment" />
+        <action
+            android:id="@+id/action_login_RegFragment_to_login_EmailFragment"
+            app:destination="@id/login_EmailFragment" />
     </fragment>
 </navigation>

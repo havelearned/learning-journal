@@ -34,6 +34,65 @@ public class Movie {
     @SerializedName("photo")
     private Photo photo;
 
+    @SerializedName("mDesc")
+    private String mDesc;
+
+    public int getmId() {
+        return mId;
+    }
+
+    public void setmId(int mId) {
+        this.mId = mId;
+    }
+
+    public String getmMovieName() {
+        return mMovieName;
+    }
+
+    public void setmMovieName(String mMovieName) {
+        this.mMovieName = mMovieName;
+    }
+
+    public String getmDirector() {
+        return mDirector;
+    }
+
+    public void setmDirector(String mDirector) {
+        this.mDirector = mDirector;
+    }
+
+    public String getmProtagonist() {
+        return mProtagonist;
+    }
+
+    public void setmProtagonist(String mProtagonist) {
+        this.mProtagonist = mProtagonist;
+    }
+
+    public String getmSupport() {
+        return mSupport;
+    }
+
+    public void setmSupport(String mSupport) {
+        this.mSupport = mSupport;
+    }
+
+    public Date getmScreen() {
+        return mScreen;
+    }
+
+    public void setmScreen(Date mScreen) {
+        this.mScreen = mScreen;
+    }
+
+    public String getmDesc() {
+        return mDesc;
+    }
+
+    public void setmDesc(String mDesc) {
+        this.mDesc = mDesc;
+    }
+
     public void setMId(int mId) {
         this.mId = mId;
     }
