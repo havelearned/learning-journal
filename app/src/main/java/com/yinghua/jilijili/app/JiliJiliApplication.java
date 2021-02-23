@@ -31,20 +31,7 @@ public class JiliJiliApplication extends Application {
         super.onCreate();
 
 
-        SharedPreferences spf=getSharedPreferences("JiliJIli",Context.MODE_PRIVATE);
-        SharedPreferences.Editor edit = spf.edit();
 
-        edit.putBoolean("FIRST_USE",Consts.FIRST_USE);
-        edit.putBoolean("LOGIN_FLAG",Consts.LOGIN_FLAG);
-        edit.putString("LOGIN_DATE",Consts.LOGIN_DATE);
-        edit.putString("USER_INFO", Consts.USER_INFO );
-        edit.putStringSet("MOVIES_SET_ARRAY",Consts.MOVIES_SET_ARRAY);
-        edit.putStringSet("TICKET_SET_ARRAY",Consts.TICKET_SET_ARRAY);
-        edit.putStringSet("ORDER_SET_ARRAY",Consts.ORDER_SET_ARRAY);
-
-        edit.apply();
-        Set set=new ArraySet();
-        set.add("mofsdf");
         InitOkHttpClient();
         /**
          * 成功连接上网络时才能调用Okhttp

@@ -1,9 +1,4 @@
 package com.yinghua.jilijili.utily;
-
-import com.yinghua.jilijili.bean.Orderforgoods;
-import com.yinghua.jilijili.bean.Ticket;
-import com.yinghua.jilijili.pagding.moviepagding.Movies;
-
 import java.util.Random;
 import java.util.Set;
 

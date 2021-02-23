@@ -5,6 +5,7 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.paging.PositionalDataSource;
 
+import com.yinghua.jilijili.app.JiliJiliSharedPreferences;
 import com.yinghua.jilijili.bean.Movie;
 import com.yinghua.jilijili.service.MoviesRetrofitClient;
 import com.yinghua.jilijili.utily.Consts;
@@ -27,18 +28,19 @@ public class MovieDataSource extends PositionalDataSource<Movie> {
                 .enqueue(new Callback<List<Movie>>() {
                     @Override
                     public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                        if (response.body() != null) {
-
+                        if(response.code()==200&&response!=null){
                             Log.e(Consts.TAG, "loadInitial_请求成功" + response.raw());
                             System.out.println(response.toString());
                             callback.onResult(response.body(),0);
+                        }else{
+                            Log.e(Consts.TAG, "loadInitial_onResponse——请求失败" + response.raw());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<List<Movie>> call, Throwable t) {
                         t.printStackTrace();
-                        Log.e(Consts.TAG, "请求失败了" + t.getMessage());
+                        Log.e(Consts.TAG, "loadInitial_onFailure——请求失败了" + t.getMessage());
                     }
                 });
     }
@@ -52,16 +54,18 @@ public class MovieDataSource extends PositionalDataSource<Movie> {
                 .enqueue(new Callback<List<Movie>>() {
                     @Override
                     public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                        if (response.body() != null) {
-                            Log.e(Consts.TAG, "loadInitial_请求成功" + response.raw());
+                        if (response.code()==200&&response.body() != null) {
+                            Log.e(Consts.TAG, "loadRange_onResponse——请求成功" + response.raw());
                             callback.onResult(response.body());
                         }
                     }
 
                     @Override
                     public void onFailure(Call<List<Movie>> call, Throwable t) {
-                        Log.e(Consts.TAG, "请求失败了" + t.getMessage());
+                        Log.e(Consts.TAG, "loadRange_——loadRange_请求失败了" + t.getMessage());
                     }
                 });
+
+
     }
 }

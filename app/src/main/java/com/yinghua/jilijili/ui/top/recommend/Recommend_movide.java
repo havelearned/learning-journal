@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import com.yinghua.jilijili.bean.Movie;
 import com.yinghua.jilijili.pagding.moviepagding.MovieDataSourceItme;
 import com.yinghua.jilijili.pagding.moviepagding.MoviePageListAdapter;
 import com.yinghua.jilijili.pagding.moviepagding.MovieViewMode;
+import com.yinghua.jilijili.utily.Consts;
 
 public class Recommend_movide extends Fragment {
 
@@ -44,7 +46,7 @@ public class Recommend_movide extends Fragment {
         movieVIewModel.moviePageList.observe(getViewLifecycleOwner(), new Observer<PagedList<Movie>>() {
             @Override
             public void onChanged(PagedList<Movie> movies) {
-                System.out.println(movies);
+                Log.e(Consts.TAG,"数据:"+movies.toString());
                 moviePageListAdapter.submitList(movies);
             }
         });

@@ -166,7 +166,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
-                android:text="演员"
+                android:text="@string/tv_yanyuan"
                 android:textColor="#252424"
                 android:textSize="20sp" />
 
@@ -177,22 +177,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
                 android:layout_marginTop="10sp"
-                android:text="演员名字"
-                android:textSize="20sp" />
+                android:text="@string/yuanyuanName"
+                android:textSize="20sp"
+                android:layout_marginStart="10sp" />
 
             <TextView
                 android:id="@+id/text2_Movie_info_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
-                android:text="演员名字"
-                android:textSize="20sp" />
+                android:text="@string/yuanyuanName"
+                android:textSize="20sp"
+                android:layout_marginStart="10sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
-                android:text="制作信息"
+                android:text="@string/zhizuoxinxi"
                 android:textColor="#252424"
                 android:textSize="20sp" />
 
@@ -201,8 +203,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
-                android:text="制作信息名字"
-                android:textSize="20sp" />
+                android:text="@string/zhizuoxinxiName"
+                android:textSize="20sp"
+                android:layout_marginStart="10sp" />
 
 
 
@@ -210,7 +213,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10sp"
-                android:text="简介"
+                android:text="@string/jianjie"
                 android:textColor="#252424"
                 android:textSize="20sp" />
 
@@ -219,12 +222,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10sp"
-                android:text="简介内容简介内容
-简介内容
-简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容简介内容"
-                android:textSize="20sp" />
+                android:text="@string/jianjie"
 
-        </LinearLayout>-->
+                android:textSize="20sp"
+                android:layout_marginStart="10sp" />
 
+        </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

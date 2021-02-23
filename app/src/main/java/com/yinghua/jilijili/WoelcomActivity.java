@@ -1,6 +1,8 @@
 package com.yinghua.jilijili;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.yinghua.jilijili.app.JiliJiliSharedPreferences;
 import com.yinghua.jilijili.utily.ActivityCollector;
 import com.yinghua.jilijili.utily.IndexCountDownTimerUtils;
 
@@ -42,10 +45,9 @@ public class WoelcomActivity extends AppCompatActivity {
             public void onClick(View v) {
                 intent.setClass(WoelcomActivity.this, MainActivity.class);
                 startActivity(intent);
-                finish();
+                onDestroy();
             }
         });
-
         IndexCountDownTimerUtils countDownTimerUtils = new IndexCountDownTimerUtils(5000, 1000, button, this);
         countDownTimerUtils.start();
 

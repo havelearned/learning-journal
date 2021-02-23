@@ -13,13 +13,14 @@
         android:layout_height="74dp"
         android:src="@drawable/ic_app_wx"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
 
     <Button
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="微信支付"
+        android:text="@string/textView3"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,13 +33,14 @@
         android:src="@drawable/ic_app_zhifubao"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:contentDescription="@string/todo" />
 
     <Button
         android:id="@+id/zhifubao"
         android:layout_width="146dp"
         android:layout_height="55dp"
-        android:text="支付宝支付"
+        android:text="@string/zhifubao"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

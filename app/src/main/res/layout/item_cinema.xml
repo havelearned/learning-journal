@@ -18,14 +18,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_app_indexmain_bg" />
+        app:srcCompat="@drawable/ic_app_indexmain_bg"
+        android:contentDescription="@string/todo" />
 
     <TextView
         android:id="@+id/tv_Name"
         android:layout_width="224dp"
         android:layout_height="30dp"
         android:gravity="center_horizontal"
-        android:text="电影院名称"
+        android:text="@string/tv_Name"
         android:textColor="@color/purple_500"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -36,7 +37,7 @@
         android:id="@+id/tv_MovieName"
         android:layout_width="224dp"
         android:layout_height="64dp"
-        android:text="正在热播：xxxxx"
+        android:text="@string/tv_movieName"
         android:gravity="center"
         android:textColor="#EF0404"
         app:layout_constraintStart_toEndOf="@+id/cinema_image"
@@ -46,7 +47,7 @@
         android:id="@+id/tv_sum"
         android:layout_width="224dp"
         android:layout_height="32dp"
-        android:text="当前在线人数：666"
+        android:text="@string/tv_sum"
         android:gravity="center"
         app:layout_constraintStart_toEndOf="@+id/cinema_image"
         app:layout_constraintTop_toBottomOf="@+id/tv_MovieName" />

@@ -127,13 +127,13 @@ public class ShowFragment extends Fragment {
             @Override
             public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
                 if (position == 0) {
-                    tab.setText("推荐");
+                    tab.setText("推荐电影");
                 } else if (position == 1) {
-                    tab.setText("票房");
+                    tab.setText("北美票房榜");
                 } else if (position == 2) {
-                    tab.setText("明星排行");
+                    tab.setText("新片榜");
                 } else if (position == 3) {
-                    tab.setText("即将上映");
+                    tab.setText("电影条目剧照");
                 }
 
             }

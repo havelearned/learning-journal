@@ -75,10 +75,12 @@ public class Login_RegFragment extends Fragment implements View.OnClickListener 
         reg_userSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (checkedId == 2) {
-                    sex = "女";
-                } else if (checkedId == 1) {
+                if (checkedId == R.id.reg_man) {
                     sex = "男";
+                    System.out.println("性别为："+sex);
+                } else if (checkedId == R.id.reg_grui) {
+                    sex = "女";
+                    System.out.println("性别为："+sex);
                 }
             }
         });
@@ -92,7 +94,6 @@ public class Login_RegFragment extends Fragment implements View.OnClickListener 
         String nickname = et_reg_nickname.getText().toString().trim();
         if (nickname.length() < 1 || nickname.length() > 6) {
             Toast.makeText(getContext(), "昵称不符合", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(), "手机号不符合", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -100,13 +101,12 @@ public class Login_RegFragment extends Fragment implements View.OnClickListener 
         String pass = et_reg_pass.getText().toString().trim();
         if (pass.length() < 6 || pass.length() > 16) {
             Toast.makeText(getContext(), "密码不符合", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(), "手机号不符合", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (sex.equals("")) {
+            System.out.println("为："+sex);
             Toast.makeText(getContext(), "性别：不符合", Toast.LENGTH_SHORT).show();
-            Toast.makeText(getContext(), "手机号不符合", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -135,7 +135,7 @@ public class Login_RegFragment extends Fragment implements View.OnClickListener 
                                 Integer body = response.body();
                                 if (body == null || body == 0) {
                                     Log.e(Consts.TAG, response.raw() + "\nLogin_RegFragment.onResponse_请求失败：0 失败--》" + response.body());
-                                    Toast.makeText(getContext(), "系统异常", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(getContext(), "已经注册过的手机，请返回登录", Toast.LENGTH_SHORT).show();
                                 } else {
                                     Log.e(Consts.TAG, response.raw() + "\nLogin_RegFragment.onResponse_请求成功：0 失败--》" + response.body());
                                     Bundle bundle = new Bundle();
@@ -148,7 +148,6 @@ public class Login_RegFragment extends Fragment implements View.OnClickListener 
 
                             @Override
                             public void onFailure(Call<Integer> call, Throwable t) {
-
                                 Toast.makeText(getContext(), "网络异常" + t.getMessage(), Toast.LENGTH_SHORT).show();
                             }
                         });

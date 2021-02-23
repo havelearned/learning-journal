@@ -55,7 +55,7 @@
             android:layout_weight="1"
 
             android:src="@drawable/ic_mybox"
-            />
+            android:contentDescription="@string/todo" />
 
         <ImageButton
             android:id="@+id/app_search"
@@ -65,7 +65,8 @@
             android:layout_weight="1"
             android:background="@drawable/round_corners_bg"
             app:srcCompat="@drawable/ic_baseline_search_24"
-            tools:ignore="VectorDrawableCompat" />
+            tools:ignore="VectorDrawableCompat"
+            android:contentDescription="@string/todo" />
 
 
         <ImageView
@@ -75,7 +76,7 @@
             android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_myorder"
-            />
+            android:contentDescription="@string/todo" />
 
 
         <ImageView
@@ -85,7 +86,7 @@
             android:layout_weight="1"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_notifications_black_24dp"
-            />
+            android:contentDescription="@string/todo" />
 
 
     </LinearLayout>

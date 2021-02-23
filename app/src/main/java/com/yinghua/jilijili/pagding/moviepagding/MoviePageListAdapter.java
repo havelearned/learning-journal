@@ -1,6 +1,7 @@
 package com.yinghua.jilijili.pagding.moviepagding;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.ViewTarget;
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.bean.Movie;
 
@@ -73,6 +75,7 @@ public class MoviePageListAdapter extends PagedListAdapter<Movie, MoviePageListA
             String movieU = "导演：" + movie.getMDirector() + "   ·   主演：" + movie.getMProtagonist();
 
             Glide.with(context).load(movie.getPhoto().getP_photo()).into(holder.imageView);
+
             holder.textView.setText(movieU);
             holder.textView2.setText(movieNameo);
             holder.button.setText(format);

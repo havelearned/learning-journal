@@ -29,6 +29,33 @@
     <string name="login_email">邮箱登录</string>
     <string name="login_tvPassword">密码</string>
     <string name="login_tvName">账号</string>
+    <string name="title">电影名称</string>
+    <string name="durations">时间</string>
+    <string name="tv_average">评分</string>
+    <string name="tv_directors">导演</string>
+    <string name="tv_durations">时长</string>
+    <string name="xiangqing">前往豆瓣查看详情</string>
+    <string name="textviewDD">TextView</string>
+    <string name="textview">TextView</string>
+    <string name="button">上映日期</string>
+    <string name="tv_Name">电影院名称</string>
+    <string name="tv_movieName">正在热播：xxxxx</string>
+    <string name="tv_sum">当前在线人数：666</string>
+    <string name="textView3">微信支付</string>
+    <string name="zhifubao">支付宝支付</string>
+    <string name="tv_yanyuan">演员</string>
+    <string name="yuanyuanName">演员名字</string>
+    <string name="zhizuoxinxi">制作信息</string>
+    <string name="zhizuoxinxiName">制作信息名字</string>
+    <string name="jianjie">简介</string>
+    <string name="tv_NickName">张三</string>
+    <string name="tv_tev">182****5882</string>
+    <string name="getrenfuwu">个人服务</string>
+    <string name="getRenzhonxing">个人中心</string>
+    <string name="tuijianyewu">推荐业务</string>
+    <string name="todo">TODO</string>
+    <string name="tuichu">退出</string>
+    <string name="reg_title">用户登录</string>
 
 
 </resources>

@@ -66,5 +66,17 @@
         android:name="com.yinghua.jilijili.LocalhostActivity"
         android:label="activity_localhost"
         tools:layout="@layout/activity_localhost" />
+    <fragment
+        android:id="@+id/boxofficeFragment"
+        android:name="com.yinghua.jilijili.ui.top.boxoffice.BoxofficeFragment"
+        android:label="BoxofficeFragment"
+
+        >
+        <deepLink
+            app:uri="https://movie.douban.com/subject/{params}/"
+
+            />
+
+    </fragment>
 
 </navigation>

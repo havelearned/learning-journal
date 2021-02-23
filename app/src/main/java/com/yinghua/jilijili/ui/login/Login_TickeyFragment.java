@@ -22,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.yinghua.jilijili.MainActivity;
 import com.yinghua.jilijili.R;
+import com.yinghua.jilijili.app.JiliJiliSharedPreferences;
 import com.yinghua.jilijili.bean.Ticket;
 import com.yinghua.jilijili.service.MoviesRetrofitClient;
 import com.yinghua.jilijili.utily.Consts;
@@ -119,8 +120,9 @@ public class Login_TickeyFragment extends Fragment {
 
                             //启动
                             Intent intent = new Intent(getActivity(), MainActivity.class);
-
-                            intent.putExtra("tel", login_name);
+                            JiliJiliSharedPreferences jiliJiliSharedPreferences = new JiliJiliSharedPreferences(getActivity().getApplicationContext());
+                            jiliJiliSharedPreferences.save("ticketNickname",ticket.gettNickname());
+                            jiliJiliSharedPreferences.save("tel",ticket.gettPhone());
                             intent.putExtra("newDate", new SimpleDateFormat("yyyy-dd-MM HH:mm").format(new Date()));
                             startActivity(intent);
                             getActivity().finish();

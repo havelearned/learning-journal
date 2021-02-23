@@ -142,4 +142,18 @@ public class Movie {
         return photo;
     }
 
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "mId=" + mId +
+                ", mMovieName='" + mMovieName + '\'' +
+                ", mDirector='" + mDirector + '\'' +
+                ", mProtagonist='" + mProtagonist + '\'' +
+                ", mSupport='" + mSupport + '\'' +
+                ", mScreen=" + mScreen +
+                ", photo=" + photo +
+                ", mDesc='" + mDesc + '\'' +
+                '}';
+    }
 }
