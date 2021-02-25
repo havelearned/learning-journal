@@ -22,6 +22,10 @@ public class Consts {
     public static final int cinemaId = 0;
     public static final int movieId = 0;
 
+
+
+    public static final String REQUEST_STEMAIL="https://api.muxiaoguo.cn/api/";
+
     public static final String localhost = "http://192.168.1.4:9999/";
 
     //访问服务器获取数据

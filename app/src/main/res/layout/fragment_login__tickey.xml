@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.login.Login_TickeyFragment">
+
     <ImageView
         android:id="@+id/login_back"
         android:layout_width="match_parent"
@@ -12,9 +13,11 @@
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintVertical_bias="1.0" />
+
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -37,7 +40,15 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
+            <Button
+                android:id="@+id/login_newUser"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_marginLeft="72dp"
+                android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/reg_title"
 
+                android:text="@string/login_newUser" />
         </RelativeLayout>
 
     </androidx.appcompat.widget.Toolbar>
@@ -74,26 +85,39 @@
         android:id="@+id/login_password"
         android:layout_width="wrap_content"
         android:layout_height="50sp"
-        android:textSize="15sp"
+        android:background="@drawable/round_corners_bg"
+        android:drawableStart="@drawable/ic_baseline_domain_verification_24"
+        android:drawableLeft="@drawable/ic_baseline_domain_verification_24"
         android:drawableEnd="@drawable/ic_baseline_clear_24"
         android:drawableRight="@drawable/ic_baseline_clear_24"
         android:ems="10"
         android:hint="@string/login_password"
+        android:inputType="numberPassword"
+        android:selectAllOnFocus="true"
         android:textColor="#000000"
         android:textColorHint="#918A8A"
-        android:background="@drawable/round_corners_bg"
-        android:selectAllOnFocus="true"
-        android:textScaleX="1.2"
-        android:drawableLeft="@drawable/ic_baseline_domain_verification_24"
 
-        android:inputType="numberPassword"
+        android:textScaleX="1.2"
+        android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736"
-        android:drawableStart="@drawable/ic_baseline_domain_verification_24" />
+        app:layout_constraintVertical_bias="0.807" />
+
+    <Button
+        android:id="@+id/login_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/login_login"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toStartOf="@+id/guideline7"
+        app:layout_constraintHorizontal_bias="0.83"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_password"
+        app:layout_constraintVertical_bias="0.037" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -148,36 +172,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.736" />
-
-    <Button
-        android:id="@+id/login_login"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/login_login"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="0.83"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/login_newUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginRight="104dp"
-        android:text="@string/login_newUser"
-        android:onClick="OnlickReg"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toBottomOf="@+id/login_password"
-        app:layout_constraintVertical_bias="0.125" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline8"
@@ -186,43 +181,18 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
 
-    <com.yinghua.jilijili.utily.ImageWithClear
-        android:id="@+id/logni_qqLogin"
-        android:layout_width="98dp"
-        android:layout_height="74dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toStartOf="@+id/guideline7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.986"
-        app:srcCompat="@drawable/ic_app_qq" />
-
-    <com.yinghua.jilijili.utily.ImageWithClear
-        android:id="@+id/logni_wxLogin"
-        android:layout_width="98dp"
-        android:layout_height="74dp"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/guideline8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline7"
-        app:layout_constraintTop_toTopOf="@+id/guideline6"
-        app:layout_constraintVertical_bias="0.972"
-        app:srcCompat="@drawable/ic_app_wx" />
-
-    <Button
+    <ImageButton
         android:id="@+id/login_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="98dp"
+        android:layout_height="74dp"
+        android:background="@drawable/ic_app_email"
+        android:scaleType="centerCrop"
         android:text="@string/login_email"
-        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_password"
-        app:layout_constraintVertical_bias="0.842" />
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

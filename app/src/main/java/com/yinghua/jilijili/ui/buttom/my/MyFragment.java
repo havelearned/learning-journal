@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.yinghua.jilijili.LoginActivity;
 import com.yinghua.jilijili.MainActivity;
+import com.yinghua.jilijili.OrderActivity;
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.app.JiliJiliSharedPreferences;
 
@@ -26,7 +27,7 @@ import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
 
 
 public class MyFragment extends Fragment {
-    LinearLayout llaout_desc,llaout_loginout;
+    LinearLayout llaout_desc,llaout_loginout,myToOrder;
     ImageView iv_head;
     TextView tv_Nickname,tev;
     JiliJiliSharedPreferences jiliJiliSharedPreferences;
@@ -80,12 +81,22 @@ public class MyFragment extends Fragment {
             }
         });
 
+        myToOrder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), OrderActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().finish();
+            }
+        });
         return root;
     }
 
     private void inItData(View root) {
         llaout_desc =root.findViewById(R.id.llaout_desc);
         llaout_loginout =root.findViewById(R.id.llaout_loginout);
+        myToOrder=root.findViewById(R.id.myToOrder);
         iv_head =root.findViewById(R.id.iv_head);
         tv_Nickname =root.findViewById(R.id.tv_Nickname);
         tev=root.findViewById(R.id.tv_tev);

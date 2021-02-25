@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,7 +16,6 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.yinghua.jilijili.MainActivity;
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.adapter.BoxofficeAdapter;
 import com.yinghua.jilijili.bean.DouBan;
@@ -35,21 +32,22 @@ public class BoxofficeFragment extends Fragment {
     private RecyclerView box_recyclerview;
     private RequestQueue mRequestQueue;
     private List<DouBan> mMovieList;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_top_boxoffice, container, false);
         Bundle arguments = getArguments();
-        if(arguments!=null){
+        if (arguments != null) {
             String params = arguments.getString("params");
-            System.out.println(params+"=========================================================");
-        }else{
+            System.out.println(params + "=========================================================");
+        } else {
             System.out.println("===================params空的======================================");
         }
         initData(new VolleyCallback() {
             @Override
             public void onSuccess(List<DouBan> result) {
-                box_recyclerview=root.findViewById(R.id.box_recyclerview );
-                box_recyclerview.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
+                box_recyclerview = root.findViewById(R.id.box_recyclerview);
+                box_recyclerview.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
                 box_recyclerview.setAdapter(new BoxofficeAdapter(result, getContext()));
 
@@ -59,7 +57,7 @@ public class BoxofficeFragment extends Fragment {
         return root;
     }
 
-    public List<DouBan>  initData(VolleyCallback callback) {
+    public List<DouBan> initData(VolleyCallback callback) {
         mMovieList = new ArrayList<>();
         mRequestQueue = Volley.newRequestQueue(getContext());
         String url = "http://api.douban.com/v2/movie/weekly?apikey=0df993c66c0c636e29ecbb5344252a4a&start=1&count=20";
@@ -104,9 +102,8 @@ public class BoxofficeFragment extends Fragment {
                         JSONObject images = subject1.getJSONObject("images");
                         String small = images.getString("small");
 
-                        DouBan movies = new DouBan(id,title,small,average,pubdates, durations,alt,name);
-                        System.out.println(movies.toString());
-                        mMovieList.add(i,movies);
+                        DouBan movies = new DouBan(id, title, small, average, pubdates, durations, alt, name);
+                        mMovieList.add(i, movies);
                     }
                     callback.onSuccess(mMovieList);
                 } catch (JSONException e) {

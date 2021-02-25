@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/order_navigation"
+    app:startDestination="@id/orderFragment2">
+    <fragment
+        android:id="@+id/successFragment"
+        android:name="com.yinghua.jilijili.ui.top.recommend.order.SuccessFragment"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" />
+    <fragment
+        android:id="@+id/undoneFragment"
+        android:name="com.yinghua.jilijili.ui.top.recommend.order.UndoneFragment"
+        android:label="fragment_undone2"
+        tools:layout="@layout/fragment_undone2" >
+        <action
+            android:id="@+id/action_undoneFragment_to_ereWeiCodeFragment"
+            app:destination="@id/ereWeiCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderFragment2"
+        android:name="com.yinghua.jilijili.ui.top.recommend.order.OrderFragment"
+        android:label="fragment_order2"
+        tools:layout="@layout/fragment_order2" >
+        <action
+            android:id="@+id/action_orderFragment2_to_ereWeiCodeFragment"
+            app:destination="@id/ereWeiCodeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ereWeiCodeFragment"
+        android:name="com.yinghua.jilijili.EreWeiCodeFragment"
+        android:label="fragment_ere_wei_code"
+        tools:layout="@layout/fragment_ere_wei_code" />
+</navigation>

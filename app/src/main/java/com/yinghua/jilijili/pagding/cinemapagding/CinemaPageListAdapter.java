@@ -55,7 +55,6 @@ public class CinemaPageListAdapter extends RecyclerView.Adapter<CinemaPageListAd
         holder.cinema_layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "被点击了"+cinema.getCCname(), Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(context, LocalhostActivity.class);
                 context.startActivity(intent);
             }

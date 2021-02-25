@@ -1,20 +1,15 @@
 package com.yinghua.jilijili.ui.login;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import android.os.Handler;
-import android.os.Message;
-import android.util.ArraySet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,7 +17,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -30,12 +24,10 @@ import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.service.MoviesRetrofitClient;
 import com.yinghua.jilijili.utily.Consts;
 
-import java.util.Set;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
 
 public class Login_RegFragment extends Fragment implements View.OnClickListener {
     ImageButton login_breakLogin;

@@ -1,6 +1,7 @@
 package com.yinghua.jilijili.ui.buttom.show;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +22,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.yinghua.jilijili.OrderActivity;
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.ui.top.boxoffice.BoxofficeFragment;
 import com.yinghua.jilijili.ui.top.comingsoon.ComingSoonFragment;
@@ -36,7 +38,7 @@ import com.yinghua.jilijili.ui.top.starrnaking.StrrnaKingFragment;
  */
 public class ShowFragment extends Fragment {
     ImageButton app_search;
-    ImageView touxing;
+    ImageView touxing, to_order;
     ViewPager2 viewPager2;
     TabLayout tableLayout;
 
@@ -74,12 +76,22 @@ public class ShowFragment extends Fragment {
 
     private void ImageOnclick(View root) {
         touxing = root.findViewById(R.id.touxing);
-
+        to_order=root.findViewById(R.id.to_order);
         touxing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.navigation_my);
+            }
+        });
+
+        to_order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), OrderActivity.class);
+                getActivity().startActivity(intent);
+                getActivity().finish();
             }
         });
     }

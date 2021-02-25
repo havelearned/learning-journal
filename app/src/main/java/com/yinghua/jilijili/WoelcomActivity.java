@@ -1,8 +1,6 @@
 package com.yinghua.jilijili;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,13 +10,9 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.yinghua.jilijili.app.JiliJiliSharedPreferences;
-import com.yinghua.jilijili.utily.ActivityCollector;
 import com.yinghua.jilijili.utily.IndexCountDownTimerUtils;
-
 import java.util.Random;
 
 public class WoelcomActivity extends AppCompatActivity {
@@ -39,13 +33,16 @@ public class WoelcomActivity extends AppCompatActivity {
         
         //网络加载图片
         doIndexImage();
+
         Intent intent = new Intent();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 intent.setClass(WoelcomActivity.this, MainActivity.class);
                 startActivity(intent);
-                onDestroy();
+                finish();
+
+
             }
         });
         IndexCountDownTimerUtils countDownTimerUtils = new IndexCountDownTimerUtils(5000, 1000, button, this);

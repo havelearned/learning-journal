@@ -5,17 +5,16 @@
     <!-- 获取网络信息 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission
-        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-        tools:ignore="ScopedStorage" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE/" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".app.JiliJiliApplication"
@@ -27,13 +26,16 @@
         android:theme="@style/Theme.ViewPager"
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
-        <activity android:name=".GuideActivity"></activity>
-        <activity android:name=".WoelcomActivity" />
-
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="8euX8TdnsCSUVwtPGpWjnS6zWbIIf9w2" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
 
+        <activity android:name=".GuideActivity" />
+        <activity android:name=".WoelcomActivity" />
         <activity android:name=".IndexActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,15 +45,10 @@
         </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".MovieInfo" />
-        <activity android:name=".MainActivity" >
-            <nav-graph android:value="@navigation/mobile_navigation"/>
+        <activity android:name=".MainActivity">
+            <nav-graph android:value="@navigation/mobile_navigation" />
         </activity>
         <activity android:name=".LocalhostActivity" />
-
-        <service
-            android:name="com.baidu.location.f"
-            android:enabled="true"
-            android:process=":remote" />
+        <activity android:name="com.yinghua.jilijili.OrderActivity"></activity>
     </application>
-
 </manifest>

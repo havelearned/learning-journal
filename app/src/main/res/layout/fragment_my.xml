@@ -19,9 +19,9 @@
             android:id="@+id/iv_back"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_app_indexmain_bg"
-            android:contentDescription="@string/todo" />
+            android:src="@drawable/ic_app_indexmain_bg" />
 
         <ImageView
             android:id="@+id/iv_head"
@@ -43,32 +43,32 @@
                 android:layout_width="1dp"
                 android:layout_height="25dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
                 android:background="@color/white"
-                android:contentDescription="@string/todo"
-                android:layout_marginStart="15dp" />
+                android:contentDescription="@string/todo" />
 
             <TextView
                 android:id="@+id/tv_Nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_toStartOf="@id/user_line"
                 android:layout_toLeftOf="@id/user_line"
                 android:text="@string/tv_NickName"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                android:layout_toStartOf="@id/user_line" />
+                android:textSize="17sp" />
 
             <TextView
                 android:id="@+id/tv_tev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
                 android:layout_marginLeft="15dp"
+                android:layout_toEndOf="@id/user_line"
                 android:layout_toRightOf="@id/user_line"
                 android:text="@string/tv_tev"
                 android:textColor="@color/white"
-                android:textSize="17sp"
-                android:layout_marginStart="15dp"
-                android:layout_toEndOf="@id/user_line" />
+                android:textSize="17sp" />
         </RelativeLayout>
 
     </RelativeLayout>
@@ -94,15 +94,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/getrenfuwu"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:baselineAligned="false">
-
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
 
                 <LinearLayout
@@ -111,22 +109,23 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:contentDescription="@string/todo"
                         android:src="@drawable/ic_baseline_person_search_24"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        android:contentDescription="@string/todo"
                         tools:ignore="NestedWeights" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/getRenzhonxing"
                         android:gravity="center_horizontal"
+                        android:text="@string/getRenzhonxing"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -136,13 +135,14 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:contentDescription="@string/todo"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        android:contentDescription="@string/todo"
                         tools:ignore="NestedWeights" />
 
                     <TextView
@@ -169,34 +169,37 @@
                 android:layout_height="wrap_content"
                 android:text="@string/tuijianyewu"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:baselineAligned="false">
-
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
 
                 <LinearLayout
+                    android:id="@+id/myToOrder"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="50sp"
                         android:layout_weight="1"
+                        android:src="@drawable/ic_myorder"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
 
                     <TextView
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center_horizontal"
+                        android:text="我的订单"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -206,6 +209,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -238,14 +242,12 @@
                 android:layout_height="wrap_content"
                 android:text="更多服务"
                 android:textColor="@color/black"
-                android:textSize="20sp"
-                />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-
 
 
                 <LinearLayout
@@ -254,6 +256,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -267,8 +270,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="@string/tuichu"
                         android:gravity="center_horizontal"
+                        android:text="@string/tuichu"
                         android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -278,14 +281,15 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:orientation="vertical">
+
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
+                        android:contentDescription="@string/todo"
                         android:textColor="@color/black"
                         android:textSize="20sp"
-                        tools:ignore="NestedWeights"
-                        android:contentDescription="@string/todo" />
+                        tools:ignore="NestedWeights" />
 
                     <TextView
                         android:layout_width="match_parent"

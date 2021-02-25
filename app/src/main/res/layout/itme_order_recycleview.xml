@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10sp"
+        android:background="#E5E5E5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_image"
+            android:layout_width="100dp"
+            android:layout_height="135dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/guide_3" />
+
+        <TextView
+            android:id="@+id/vt_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_image"
+            android:textColor="@color/black"
+            android:text="下单时间:" />
+
+        <TextView
+            android:id="@+id/vt_movie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vt_time"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/iv_image"
+            android:text="电影:" />
+
+        <TextView
+            android:id="@+id/vt_zuoweihao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vt_movie"
+            android:textColor="@color/black"
+            android:layout_toRightOf="@id/iv_image"
+            android:text="座位号:" />
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:layout_below="@id/vt_zuoweihao"
+            android:layout_toRightOf="@id/iv_image"
+            android:text="开始时间:" />
+        <TextView
+            android:id="@+id/tv_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_start_time"
+            android:textColor="@color/red"
+            android:layout_toRightOf="@id/iv_image"
+            android:text="总价￥:99" />
+
+        <Button
+            android:id="@+id/bt_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_sum"
+            android:layout_marginLeft="129dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@id/iv_image"
+            android:background="@drawable/round_corners_bg"
+            android:text="电影不错，完成订单" />
+
+        <TextView
+            android:id="@+id/bt_undone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bt_confirm"
+            android:layout_marginStart="5sp"
+            android:layout_marginLeft="5sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5sp"
+            android:text="电影不好看我要退款" />
+
+        <ImageView
+            android:id="@+id/erweima"
+            android:layout_width="94dp"
+            android:layout_height="82dp"
+            android:layout_below="@id/tv_sum"
+            android:layout_marginLeft="171dp"
+            android:layout_marginTop="-91dp"
+            android:layout_toRightOf="@id/iv_image"
+            />
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,8 @@
 package com.yinghua.jilijili.ui.login;
 
+import android.animation.Animator;
+import android.animation.AnimatorInflater;
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -15,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +46,8 @@ public class Login_TickeyFragment extends Fragment {
 
     TextView login_tvName, login_tvPassword;
 
-    Button login_Login, login_newUser, login_email;
+    Button login_Login, login_newUser;
+    ImageButton login_email;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -59,7 +64,6 @@ public class Login_TickeyFragment extends Fragment {
         inItView(view);
         OnlickReg(view);
         Glide.with(this).load("https://goss2.cfp.cn/creative/vcg/800/new/VCG211292029131.gif").into(login_back);
-
 
         /**
          * 获取账号信息
@@ -142,8 +146,6 @@ public class Login_TickeyFragment extends Fragment {
     private void inItView(View view) {
         login_back = view.findViewById(R.id.login_back);
         loginTotle = view.findViewById(R.id.logImage_totle);
-        loing_qq = view.findViewById(R.id.logni_qqLogin);
-        login_wx = view.findViewById(R.id.logni_wxLogin);
 
         login_Name = view.findViewById(R.id.login_name);
         login_password = view.findViewById(R.id.login_password);

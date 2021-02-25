@@ -19,10 +19,12 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.yinghua.jilijili.MainActivity;
 import com.yinghua.jilijili.R;
+import com.yinghua.jilijili.bean.Email;
 import com.yinghua.jilijili.service.MoviesRetrofitClient;
 import com.yinghua.jilijili.utily.Consts;
 import com.yinghua.jilijili.utily.CountDownTimerUtils;
 
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -34,7 +36,7 @@ public class Login_EmailFragment extends Fragment {
     ImageView login_email_back, login_email_breack;//背景图片，返回按钮
     Button login_email_newUser, login_email_Verification; //邮箱登录按钮，获取验证码按钮；
     EditText login_email_name, login_email_password;//邮箱输入框，验证码
-    Integer emailChecked;//有效验证码
+    int emailChecked;//有效验证码
     String check = "^([a-z0-9A-Z]+[-|\\.]?)+[a-z0-9A-Z]@([a-z0-9A-Z]+(-[a-z0-9A-Z]+)?\\.)+[a-zA-Z]{2,}$";//邮箱正则表达式
 
     @Override
@@ -83,15 +85,19 @@ public class Login_EmailFragment extends Fragment {
                     MoviesRetrofitClient
                             .getInstance()
                             .ticketService()
-                            .requesEmailtLogin(email, emailCode)
+                            .requesEmailtLogin(email,emailCode)
                             .enqueue(new Callback<Integer>() {
                                 @Override
                                 public void onResponse(Call<Integer> call, Response<Integer> response) {
-                                    Log.e(Consts.TAG, "Login_EmailFragment_请求成功：" + response.raw());
-                                    emailChecked = response.body();
-                                    System.out.println("邮箱验证码：" + emailChecked);
-                                }
+                                    if(response.code()==200){
+                                        emailChecked  = response.body();
+                                        Log.e(Consts.TAG, "Login_EmailFragment_请求成功：" + response.raw()+"\n" +
+                                                emailChecked);
+                                    }else{
+                                        Log.e(Consts.TAG, "Login_EmailFragment_请求失败：" + response.raw());
+                                    }
 
+                                }
                                 @Override
                                 public void onFailure(Call<Integer> call, Throwable t) {
                                     Log.e(Consts.TAG, "Login_EmailFragment_请求失败：" + t.getMessage());
@@ -117,7 +123,6 @@ public class Login_EmailFragment extends Fragment {
                     if (emailcode.equals(String.valueOf(emailChecked))) {
                         Intent intent = new Intent(getActivity(), MainActivity.class);
                         startActivity(intent);
-                        emailChecked = 0;
                         getActivity().finish();
                     } else {
                         Toast.makeText(getContext(), "验证码错误!请查看邮箱", Toast.LENGTH_SHORT).show();

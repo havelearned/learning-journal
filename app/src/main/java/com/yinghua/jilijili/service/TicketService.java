@@ -1,8 +1,10 @@
 package com.yinghua.jilijili.service;
 
+import com.yinghua.jilijili.bean.Email;
 import com.yinghua.jilijili.bean.Ticket;
 
 import retrofit2.Call;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -13,6 +15,11 @@ public interface TicketService {
     Call<Ticket> requestLogin(@Query("user") String user,
                             @Query("paw") String paw);
 
+
+    @GET("mail")
+    Call<Email> requesEmailtLogin(@Query("address") String address,
+                                  @Query("name") String name,
+                                  @Query("certno") String certno);
 
     @POST("DDSYSystem/api/userinfo")
     Call<Integer> requesEmailtLogin(@Query("user") String user,
