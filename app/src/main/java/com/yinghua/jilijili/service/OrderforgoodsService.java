@@ -1,5 +1,6 @@
 package com.yinghua.jilijili.service;
 
+import com.yinghua.jilijili.bean.ConfirmOrder;
 import com.yinghua.jilijili.bean.Orderforgoods;
 import com.yinghua.jilijili.bean.Ticket;
 
@@ -12,11 +13,12 @@ import retrofit2.http.Query;
 public interface OrderforgoodsService {
 
 
+
     /**
      * 查询所有确认的订单
      */
     @POST("DDSYSystem/ordesconfirm")
-    Call<Orderforgoods> requestQueryCofirmOders(@Query("thone") String thone);
+    Call<List<ConfirmOrder>> requestQueryCofirmOders(@Query("thone") String thone);
 
     /**
      * 添加确认的订单

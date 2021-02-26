@@ -33,6 +33,9 @@ public class Consts {
 
     public static final String DDSP_URL_MOVIE2 = "DDSYSystem/modelmovie/param";//获取影片
 
+    public static final String JOURNALISM="https://way.jd.com/jisuapi/";//获取新闻 ?channel=头条&num=10&start=0&appkey=4e69e20b3c7f735e7a6ba1ad250c4ef3
+    public static final String NEW_JOUR="https://way.jd.com/jisuapi/newSearch";//?keyword=姚明&appkey=4e69e20b3c7f735e7a6ba1ad250c4ef3
+
     public static final String DDSP_URL_MOVIE = "http://121.196.106.152:9999/DDSYSystem/modelmmovie";//获取影片
     public static final String DDSP_URL_CINEMA = "http://121.196.106.152:9999/DDSYSystem/modelcinema";//获取电影院
     public static final String DDSP_URL_ORDERFORGOODS = "http://121.196.106.152:9999/DDSYSystem/modelorderforgoodsService";//获取订单

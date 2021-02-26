@@ -25,19 +25,19 @@ public class MoviesRetrofitClient {
     }
 
     public static synchronized MoviesRetrofitClient getInstance() {
-        if (moviesRetrofitClient == null) {
             moviesRetrofitClient = new MoviesRetrofitClient();
-        }
-
         return moviesRetrofitClient;
     }
 
     public static synchronized MoviesRetrofitClient getInstance(String emailIP) {
         moviesRetrofitClient = new MoviesRetrofitClient(emailIP);
-
         return moviesRetrofitClient;
     }
 
+
+    public JournalismService mJournalismService(){
+        return retrofit.create(JournalismService.class);
+    }
 
     public OrderforgoodsService orderforgoodsService() {
         return retrofit.create(OrderforgoodsService.class);

@@ -5,10 +5,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.top.recommend.order.SuccessFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <com.baoyz.widget.PullRefreshLayout
+        android:id="@+id/pull_success"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView_success"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.baoyz.widget.PullRefreshLayout>
 
 </FrameLayout>

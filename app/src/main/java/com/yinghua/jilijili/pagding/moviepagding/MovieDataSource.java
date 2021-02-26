@@ -28,11 +28,11 @@ public class MovieDataSource extends PositionalDataSource<Movie> {
                 .enqueue(new Callback<List<Movie>>() {
                     @Override
                     public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                        if(response.code()==200&&response!=null){
+                        if (response.code() == 200 && response != null) {
                             Log.e(Consts.TAG, "loadInitial_请求成功" + response.raw());
                             System.out.println(response.toString());
-                            callback.onResult(response.body(),0);
-                        }else{
+                            callback.onResult(response.body(), 0);
+                        } else {
                             Log.e(Consts.TAG, "loadInitial_onResponse——请求失败" + response.raw());
                         }
                     }
@@ -54,7 +54,7 @@ public class MovieDataSource extends PositionalDataSource<Movie> {
                 .enqueue(new Callback<List<Movie>>() {
                     @Override
                     public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                        if (response.code()==200&&response.body() != null) {
+                        if (response.code() == 200 && response.body() != null) {
                             Log.e(Consts.TAG, "loadRange_onResponse——请求成功" + response.raw());
                             callback.onResult(response.body());
                         }

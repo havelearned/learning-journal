@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="myRatingBar">
+        <item name="android:progressDrawable">@drawable/app_title_semil</item> #背景等样式
+        <item name="android:minHeight">50dip</item> #最小高度
+        <item name="android:maxHeight">50dip</item> #最大高度
+        <item name="android:thumb">@null</item> #一般设置为null
+        <item name="android:isIndicator">false</item> #是否是展示，true，只能看不能点击
+    </style>
+</resources>
