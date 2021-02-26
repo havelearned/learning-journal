@@ -3,6 +3,8 @@ package com.yinghua.jilijili.bean;
 import java.util.List;
 
 public class Journalism {
+
+
     private String code;
     private boolean charge;
     private String msg;
@@ -108,17 +110,7 @@ public class Journalism {
             }
 
             public static class ListDTO {
-                public List<JournalismCount> mJournalismCounts;
-
-
-                public List<JournalismCount> getJournalismCounts() {
-                    return mJournalismCounts;
-                }
-
-                public void setJournalismCounts(List<JournalismCount> journalismCounts) {
-                    mJournalismCounts = journalismCounts;
-                }
-                /*private String title;
+                private String title;
                 private String time;
                 private String src;
                 private String category;
@@ -188,90 +180,9 @@ public class Journalism {
                 }
 
                 public void setWeburl(String weburl) {
-                    this.weburl = weburl;*/
+                    this.weburl = weburl;
                 }
             }
         }
     }
-
-
-
-    /*@SerializedName("title")
-    private String title; //新闻标题
-
-    @SerializedName("time")
-    private String time; //新闻时间
-
-    @SerializedName("src")
-    private String src;//标签
-
-    @SerializedName("pic")
-    private String pic;//新闻图片
-
-    @SerializedName("content")
-    private String content;//内容
-
-    @SerializedName("url")
-    private String url;//新闻网页
-
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
-    }
-
-    public String getSrc() {
-        return src;
-    }
-
-    public void setSrc(String src) {
-        this.src = src;
-    }
-
-    public String getPic() {
-        return pic;
-    }
-
-    public void setPic(String pic) {
-        this.pic = pic;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    @Override
-    public String toString() {
-        return "Journalism{" +
-                "title='" + title + '\'' +
-                ", time='" + time + '\'' +
-                ", src='" + src + '\'' +
-                ", pic='" + pic + '\'' +
-                ", content='" + content + '\'' +
-                ", url='" + url + '\'' +
-                '}';
-    }*/
-
+}

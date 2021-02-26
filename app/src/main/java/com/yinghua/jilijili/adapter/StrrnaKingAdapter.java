@@ -14,14 +14,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.bean.Journalism;
-import com.yinghua.jilijili.bean.Movie;
+import com.yinghua.jilijili.bean.JournalismCount;
 
 import java.util.List;
-import java.util.Random;
+
+import static android.media.CamcorderProfile.get;
 
 public class StrrnaKingAdapter extends RecyclerView.Adapter<StrrnaKingAdapter.myViewHolder> {
     Context context;
-    List<Journalism.ResultDTOX.ResultDTO.ListDTO> list;
+    List<Journalism.ResultDTOX.ResultDTO.ListDTO>  list;
     public StrrnaKingAdapter(Context context, List<Journalism.ResultDTOX.ResultDTO.ListDTO> list) {
         this.context = context;
         this.list = list;

@@ -49,6 +49,10 @@
             <nav-graph android:value="@navigation/mobile_navigation" />
         </activity>
         <activity android:name=".LocalhostActivity" />
-        <activity android:name="com.yinghua.jilijili.OrderActivity"></activity>
+        <activity android:name="com.yinghua.jilijili.OrderActivity" />
+        <activity android:name="com.yinghua.jilijili.WEBActivity" />
     </application>
 </manifest>
+
+
+
