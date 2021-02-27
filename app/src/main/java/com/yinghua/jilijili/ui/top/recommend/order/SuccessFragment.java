@@ -49,44 +49,6 @@ public class SuccessFragment extends Fragment {
         sharedPreferences = new JiliJiliSharedPreferences(getContext().getApplicationContext()).get();
         String tel = sharedPreferences.getString("tel", "00000000000");
 
-        pull_success.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                if (tel.equals("00000000000")) {
-                    Toast.makeText(getContext(), "请先登录", Toast.LENGTH_SHORT).show();
-                }else{
-                    MoviesRetrofitClient.getInstance()
-                            .orderforgoodsService()
-                            .requestQueryCofirmOders(tel)
-                            .enqueue(new Callback<List<ConfirmOrder>>() {
-                                @Override
-                                public void onResponse(Call<List<ConfirmOrder>> call, Response<List<ConfirmOrder>> response) {
-                                    if (response.body() != null) {
-                                        if (response.code() == 200) {
-                                            Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单成功:" + response.raw());
-
-                                            List<ConfirmOrder> body = response.body();
-                                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
-                                            recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
-                                            recyclerView.setAdapter(new OrderSuccessAdapter(getContext(), body));
-                                        } else {
-                                            Toast.makeText(getContext(), "请求已完成的订单失败", Toast.LENGTH_SHORT).show();
-                                            Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + response.raw());
-                                        }
-
-                                    } else {
-                                        Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + response.raw());
-                                    }
-                                }
-                                @Override
-                                public void onFailure(Call<List<ConfirmOrder>> call, Throwable t) {
-                                    Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + t.getMessage());
-                                }
-                            });
-                }
-                pull_success.setRefreshing(false);
-            }
-        });
 
         if (tel.equals("00000000000")) {
             Toast.makeText(getContext(), "请先登录", Toast.LENGTH_SHORT).show();
@@ -114,6 +76,7 @@ public class SuccessFragment extends Fragment {
                                 Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + response.raw());
                             }
                         }
+
                         @Override
                         public void onFailure(Call<List<ConfirmOrder>> call, Throwable t) {
                             Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + t.getMessage());
@@ -121,6 +84,48 @@ public class SuccessFragment extends Fragment {
                     });
 
         }
+
+        pull_success.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                if (tel.equals("00000000000")) {
+                    Toast.makeText(getContext(), "请先登录", Toast.LENGTH_SHORT).show();
+                } else {
+                    MoviesRetrofitClient.getInstance()
+                            .orderforgoodsService()
+                            .requestQueryCofirmOders(tel)
+                            .enqueue(new Callback<List<ConfirmOrder>>() {
+                                @Override
+                                public void onResponse(Call<List<ConfirmOrder>> call, Response<List<ConfirmOrder>> response) {
+                                    if (response.body() != null) {
+                                        if (response.code() == 200) {
+                                            Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单成功:" + response.raw());
+
+                                            List<ConfirmOrder> body = response.body();
+                                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+                                            recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL));
+                                            recyclerView.setAdapter(new OrderSuccessAdapter(getContext(), body));
+                                        } else {
+                                            Toast.makeText(getContext(), "请求已完成的订单失败", Toast.LENGTH_SHORT).show();
+                                            Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + response.raw());
+                                        }
+
+                                    } else {
+                                        Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + response.raw());
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<List<ConfirmOrder>> call, Throwable t) {
+                                    Log.e(Consts.TAG, "SuccessFragment.onResponse_请求已完成的订单失败:" + t.getMessage());
+                                }
+                            });
+                }
+                pull_success.setRefreshing(false);
+            }
+        });
+
+
         return view;
     }
 }

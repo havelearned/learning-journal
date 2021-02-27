@@ -1,5 +1,9 @@
 package com.yinghua.jilijili.bean;
 
+
+/**
+ * 已完成的订单
+ * */
 public class ConfirmOrder {
     private int cId;
     private String cMoviename;

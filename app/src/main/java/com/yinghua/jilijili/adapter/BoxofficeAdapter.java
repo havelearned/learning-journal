@@ -25,6 +25,24 @@ import com.yinghua.jilijili.bean.DouBan;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 欧美票房榜适配器
+ *
+ * BoxofficeAdapter（）
+ *  List<DouBan> pdata 通过请求豆瓣的api获取到数据，使用json解析出需要的数据
+ *                      当new 这个适配器时要传入 多个bean对象，使用list封装，
+ * ， Context context  还需要传入当前的上下文，保证是在当前的视图下生成控件
+ *
+ * loadImage()
+ *    String url  作用获取去图片的url去网络加载，并缓存。
+ *    ImageView imageView  做为图片的容器
+ *
+ *  onclick（）
+ *         DouBan ban  豆瓣bean，需要获取bean里面的电影url，通过点击事件前往豆瓣电影里面对应的网页。
+ *
+ *
+ * */
 public class BoxofficeAdapter extends RecyclerView.Adapter<BoxofficeAdapter.MyViewHolder> {
 
     private List<DouBan> pdata = new ArrayList<>();
@@ -58,7 +76,6 @@ public class BoxofficeAdapter extends RecyclerView.Adapter<BoxofficeAdapter.MyVi
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.itme__morth_american_box_office, parent, false);
-
         return new MyViewHolder(view);
     }
 

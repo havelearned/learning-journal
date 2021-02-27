@@ -5,6 +5,10 @@ import com.yinghua.jilijili.utily.Consts;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
+/**
+ * 链式调用 retrofit2
+ * */
 public class MoviesRetrofitClient {
     private static MoviesRetrofitClient moviesRetrofitClient;
     private static Retrofit retrofit;

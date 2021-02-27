@@ -22,27 +22,28 @@ import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 
+
+/**
+ * app 全局配置
+ *
+ *InitOkHttpClient（） 成功连接上网络时才能调用Okhttp
+ *
+ * isNetworkAvailable（） 判断是否有网
+ */
 public class JiliJiliApplication extends Application {
-
-
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onCreate() {
         super.onCreate();
 
 
-
         InitOkHttpClient();
-        /**
-         * 成功连接上网络时才能调用Okhttp
-         * */
+
+
         isNetworkAvailable(getApplicationContext());
-
-
-
     }
 
-    private  void InitOkHttpClient() {
+    private void InitOkHttpClient() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(new LoggerInterceptor(Consts.TAG)) //日志
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS) //连接超时/微秒
@@ -51,13 +52,9 @@ public class JiliJiliApplication extends Application {
         OkHttpUtils okHttpUtils = OkHttpUtils.initClient(okHttpClient);
 
 
-
     }
 
 
-    /**
-     * 判断是否有网
-     */
     public static boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivity == null) {

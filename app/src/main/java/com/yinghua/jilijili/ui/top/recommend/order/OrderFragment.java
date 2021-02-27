@@ -68,7 +68,7 @@ public class OrderFragment extends Fragment {
                 return 2;
             }
         });
-        page_view.setCurrentItem(1);
+        page_view.setCurrentItem(0);
         new TabLayoutMediator(mLayout, page_view, new TabLayoutMediator.TabConfigurationStrategy() {
 
             //设置标题

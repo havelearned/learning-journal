@@ -1,11 +1,10 @@
-/**
- * Copyright 2021 json.cn
- */
 package com.yinghua.jilijili.bean;
 import java.util.List;
 
 /**
  * Auto-generated: 2021-02-23 16:45:25
+ *
+ * 邮箱接口返回bean对象
  *
  * @author json.cn (i@json.cn)
  * @website http://www.json.cn/java2pojo/

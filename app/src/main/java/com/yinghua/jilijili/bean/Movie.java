@@ -7,7 +7,7 @@ import java.util.Date;
 
 /**
  * Auto-generated: 2021-02-13 22:18:7
- *
+ *  电影对象
  * @author json.cn (i@json.cn)
  * @website http://www.json.cn/java2pojo/
  */

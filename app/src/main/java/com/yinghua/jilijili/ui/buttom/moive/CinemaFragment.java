@@ -1,10 +1,8 @@
 package com.yinghua.jilijili.ui.buttom.moive;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.Message;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.bean.Cinema;
-import com.yinghua.jilijili.pagding.cinemapagding.CinemaPageListAdapter;
+import com.yinghua.jilijili.adapter.CinemaPageListAdapter;
 import com.yinghua.jilijili.service.CinemaService;
 import com.yinghua.jilijili.utily.Consts;
 
@@ -26,7 +24,6 @@ import java.io.IOException;
 import java.util.List;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -48,7 +45,6 @@ public class CinemaFragment extends Fragment {
         getData();
         return root;
     }
-
 
     public void getData() {
         new Thread(new Runnable() {

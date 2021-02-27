@@ -1,6 +1,11 @@
 package com.yinghua.jilijili.bean;
 
 
+
+/**
+ *
+ * 图片 bean 对象
+ * */
 public class Photo {
     private Integer p_id;
     private String p_name;

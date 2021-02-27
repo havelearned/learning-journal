@@ -3,7 +3,10 @@ package com.yinghua.jilijili.bean;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-
+/**
+ * 单个新闻对象
+ *
+ * */
 public class JournalismCount {
     private String title;
     private String time;

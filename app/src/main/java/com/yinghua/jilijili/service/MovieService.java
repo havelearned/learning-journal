@@ -10,6 +10,12 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
+
+/**
+ *
+ * 电影
+ *
+ * */
 public interface MovieService {
     @GET(Consts.DDSP_URL_MOVIE2)
     Call<List<Movie>> getAllMovies(@Query("start") int start,

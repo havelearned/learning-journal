@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +14,11 @@ import com.yinghua.jilijili.bean.ConfirmOrder;
 
 import java.util.List;
 
+
+/**
+ * 订单完成适配器
+ *
+ * */
 public class OrderSuccessAdapter extends RecyclerView.Adapter<OrderSuccessAdapter.MyViewHolder> {
     Context mContext;
     List<ConfirmOrder> mConfirmOrders;
@@ -41,13 +45,6 @@ public class OrderSuccessAdapter extends RecyclerView.Adapter<OrderSuccessAdapte
             holder.tv_pricesuccess.setText(String.valueOf(confirmOrder.getCPrien()));
             holder.tv_thonesuccess.setText(confirmOrder.getCThone());
             holder.tv_zuoweihaosuccess.setText(confirmOrder.getCZuowei());
-
-            holder.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-                @Override
-                public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                    holder.ratingBar.setRating(rating);
-                }
-            });
         }
     }
 
@@ -58,7 +55,6 @@ public class OrderSuccessAdapter extends RecyclerView.Adapter<OrderSuccessAdapte
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView tv_successtime,tv_thonesuccess,tv_successmovie,tv_zuoweihaosuccess,tv_pricesuccess;
-        RatingBar ratingBar;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             tv_successtime=itemView.findViewById(R.id.tv_successtime);
@@ -66,7 +62,6 @@ public class OrderSuccessAdapter extends RecyclerView.Adapter<OrderSuccessAdapte
             tv_successmovie=itemView.findViewById(R.id.tv_successmovie);
             tv_zuoweihaosuccess=itemView.findViewById(R.id.tv_zuoweihaosuccess);
             tv_pricesuccess=itemView.findViewById(R.id.tv_pricesuccess);
-            ratingBar=itemView.findViewById(R.id.ratingBar);
         }
     }
 }

@@ -1,5 +1,9 @@
 package com.yinghua.jilijili.bean;
 
+
+/**
+ * 豆瓣api bean
+ * */
 public class DouBan {
     private String id; //id
     private String title; //电影名称

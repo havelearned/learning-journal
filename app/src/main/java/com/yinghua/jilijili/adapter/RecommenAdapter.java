@@ -18,6 +18,12 @@ import com.yinghua.jilijili.utily.Consts;
 
 import java.util.List;
 
+
+
+/**
+ * 推荐完成适配器
+ *
+ * */
 public class RecommenAdapter extends RecyclerView.Adapter<RecommenAdapter.myViewHolder> {
     Context context;
     public List<Movie> movieList;

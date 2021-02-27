@@ -1,6 +1,5 @@
 plugins {
     id 'com.android.application'
-
 }
 
 android {
@@ -37,30 +36,25 @@ android {
 dependencies {
 
 
-
     // https://mvnrepository.com/artifact/com.android.volley/volley
     implementation group: 'com.android.volley', name: 'volley', version: '1.1.1'
-
-
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
-
     implementation 'com.android.support:multidex:1.0.3'
+
     //百度地图
     implementation files('libs\\BaiduLBS_Android.jar')
 
 
     //safe args
-
+    //传参插件
     apply plugin: "androidx.navigation.safeargs"
 
-    //build.gradle
+    //glide图片网络加载
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 
 
-    /**
-     * 网络请求
-     * */
+    // 网络请求
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
 
@@ -73,18 +67,20 @@ dependencies {
     //阿里巴巴json
     implementation group: 'com.alibaba', name: 'fastjson', version: '1.2.51'
     implementation 'com.squareup.okhttp3:okhttp:3.6.0'
+
     // okhttp    'com.lzy.net:okhttpserver:1.0.3' //扩展了下载管理和上传管理，根据需要添加
     implementation 'com.zhy:okhttputils:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
 
-
     //下拉刷新
     compile 'com.baoyz.pullrefreshlayout:library:1.2.0'
 
+
+//    基本的依赖
     implementation 'androidx.appcompat:appcompat:1.1.0-alpha05'
     implementation 'androidx.viewpager2:viewpager2:1.0.0-beta02'
-// https://mvnrepository.com/artifact/com.google.android.material/material
+// https://mvnrepository.com/artifact/com.google.android.material/material 谷歌材质
     implementation group: 'com.google.android.material', name: 'material', version: '1.2.1'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'

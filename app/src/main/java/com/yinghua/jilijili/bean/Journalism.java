@@ -2,6 +2,11 @@ package com.yinghua.jilijili.bean;
 
 import java.util.List;
 
+
+/**
+ * 新闻bean对象
+ *
+ * */
 public class Journalism {
 
 

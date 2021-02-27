@@ -14,11 +14,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.yinghua.jilijili.R;
 import com.yinghua.jilijili.bean.Journalism;
-import com.yinghua.jilijili.bean.JournalismCount;
 
 import java.util.List;
 
-import static android.media.CamcorderProfile.get;
+
+/**
+ *新闻适配器
+ *
+ * 获取新闻api 解析json数据获取数据传入这个适配器，
+ *
+ * 点击新闻对象时跳转到 对应的webView中
+ *
+ * */
 
 public class StrrnaKingAdapter extends RecyclerView.Adapter<StrrnaKingAdapter.myViewHolder> {
     Context context;

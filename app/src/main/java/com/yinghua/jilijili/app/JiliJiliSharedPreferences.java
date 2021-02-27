@@ -2,7 +2,6 @@ package com.yinghua.jilijili.app;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.ArraySet;
 import android.util.Log;
 
 import com.yinghua.jilijili.R;
@@ -10,6 +9,11 @@ import com.yinghua.jilijili.utily.Consts;
 
 import java.util.Set;
 
+
+/**
+ * 这个封装了 SharedPreferences 对象
+ * 方便保存
+ * */
 public class JiliJiliSharedPreferences {
     private Context context;
     String dataName="null";

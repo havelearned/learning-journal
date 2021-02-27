@@ -15,6 +15,13 @@ import androidx.lifecycle.ViewModelProvider;
 import com.yinghua.jilijili.R;
 
 
+
+/**
+ *
+ * 我的动态
+ * 该页面没有实现
+ *
+ * */
 public class DynamicFragment extends Fragment {
     private DynamicViewModel dynamicViewModel;
 

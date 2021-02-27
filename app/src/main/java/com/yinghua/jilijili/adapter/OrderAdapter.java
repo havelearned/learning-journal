@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -30,7 +29,6 @@ import com.yinghua.jilijili.bean.Orderforgoods;
 import com.yinghua.jilijili.service.MoviesRetrofitClient;
 import com.yinghua.jilijili.utily.Consts;
 
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -41,6 +39,10 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * 订单未完成适配器
+ *
+ * */
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder> {
     View thisView;
     Context mContext;
@@ -95,7 +97,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
                         .setTitle("完成订单")
                         .setMessage("确定之后，这个订单将移入已完成的订单!")
                         .create();
-                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE,"确定", new DialogInterface.OnClickListener() {
+                alertDialog.setButton(DialogInterface.BUTTON_POSITIVE, "确定", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         //添加到已完成的订单中
@@ -125,7 +127,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
                         .setView(inflate)
                         .create();
 
-                ImageView imageView =inflate.findViewById(R.id.imageView4);
+                ImageView imageView = inflate.findViewById(R.id.imageView4);
 
                 inflate.findViewById(R.id.itme_clrer).setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -137,11 +139,11 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
                     @Override
                     public void onClick(View v) {
                         deleteConfirmOrder(orderforgoods);
-                        if (thisView!=null) {
-                            ViewGroup parent = (ViewGroup)thisView.getParent();
+                        if (thisView != null) {
+                            ViewGroup parent = (ViewGroup) thisView.getParent();
                             parent.removeAllViews();
                             Toast.makeText(mContext, "退款成功，请下拉刷新", Toast.LENGTH_SHORT).show();
-                        }else{
+                        } else {
                             Toast.makeText(mContext, "请联系管理员", Toast.LENGTH_SHORT).show();
                         }
 
@@ -156,7 +158,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
         holder.erweima.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavController navController=Navigation.findNavController(v);
+                NavController navController = Navigation.findNavController(v);
                 navController.navigate(R.id.ereWeiCodeFragment);
             }
         });
@@ -170,14 +172,14 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         RelativeLayout relativeLayout;
-        ImageView iv_image,erweima;
-        TextView vt_time, vt_movie, vt_zuoweihao, tv_start_time, tv_sum,bt_undone;
+        ImageView iv_image, erweima;
+        TextView vt_time, vt_movie, vt_zuoweihao, tv_start_time, tv_sum, bt_undone;
         Button bt_confirm;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             iv_image = itemView.findViewById(R.id.iv_image);
-            erweima=itemView.findViewById(R.id.erweima);
+            erweima = itemView.findViewById(R.id.erweima);
             vt_time = itemView.findViewById(R.id.vt_time);
             vt_movie = itemView.findViewById(R.id.vt_movie);
             vt_zuoweihao = itemView.findViewById(R.id.vt_zuoweihao);
@@ -186,7 +188,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             bt_undone = itemView.findViewById(R.id.bt_undone);
             bt_confirm = itemView.findViewById(R.id.bt_confirm);
             relativeLayout = itemView.findViewById(R.id.relativeLayout);
-            thisView =itemView;
+            thisView = itemView;
         }
     }
 
