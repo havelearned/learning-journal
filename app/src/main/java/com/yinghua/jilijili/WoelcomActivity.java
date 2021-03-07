@@ -17,7 +17,7 @@ import java.util.Random;
 
 public class WoelcomActivity extends AppCompatActivity {
     public static Activity activity;
-    String[] strImage = {"http://jilijili.fun/indexImage/1.jpg", "http://jilijili.fun/indexImage/2.gif", "http://jilijili.fun/indexImage/3.jpg"};
+    String[] strImage = {"http://jilijili.fun/indexImage/1.jpg", "http://jilijili.fun/indexImage/2.gif", "http://jilijili.fun/indexImage/3.gif"};
     ImageView index_image;
     Button button;
 
@@ -35,19 +35,8 @@ public class WoelcomActivity extends AppCompatActivity {
         doIndexImage();
 
         Intent intent = new Intent();
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                intent.setClass(WoelcomActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-
-
-            }
-        });
-        IndexCountDownTimerUtils countDownTimerUtils = new IndexCountDownTimerUtils(5000, 1000, button, this);
+        IndexCountDownTimerUtils countDownTimerUtils = new IndexCountDownTimerUtils(4000, 1000, button, this);
         countDownTimerUtils.start();
-
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -60,13 +49,17 @@ public class WoelcomActivity extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 }else{
-                    intent.setClass(WoelcomActivity.this,MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                    index(intent);
                 }
             }
-        },5000);
+        },4000);
 
+    }
+
+    private void index(Intent intent) {
+        intent.setClass(WoelcomActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void inItView() {

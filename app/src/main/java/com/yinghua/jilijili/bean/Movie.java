@@ -1,6 +1,9 @@
 package com.yinghua.jilijili.bean; /**
  * Copyright 2021 json.cn
  */
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Date;
@@ -11,7 +14,7 @@ import java.util.Date;
  * @author json.cn (i@json.cn)
  * @website http://www.json.cn/java2pojo/
  */
-public class Movie {
+public class Movie  {
 
     @SerializedName("mId")
     private int mId;
@@ -36,6 +39,18 @@ public class Movie {
 
     @SerializedName("mDesc")
     private String mDesc;
+
+
+    protected Movie(Parcel in) {
+        mId = in.readInt();
+        mMovieName = in.readString();
+        mDirector = in.readString();
+        mProtagonist = in.readString();
+        mSupport = in.readString();
+        photo = in.readParcelable(Photo.class.getClassLoader());
+        mDesc = in.readString();
+    }
+
 
     public int getmId() {
         return mId;
@@ -156,4 +171,7 @@ public class Movie {
                 ", mDesc='" + mDesc + '\'' +
                 '}';
     }
+
+
+
 }

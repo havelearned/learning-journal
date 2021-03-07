@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/mobil_navigation"
+    app:startDestination="@id/seekFragment">
+
+    <fragment
+        android:id="@+id/seekFragment"
+        android:name="com.yinghua.jilijili.ui.SeekFragment"
+        android:label="SeekFragment" >
+        <action
+            android:id="@+id/action_seekFragment_to_seekMovie"
+            app:destination="@id/seekMovie" />
+        <action
+            android:id="@+id/action_seekFragment_to_seekTicket"
+            app:destination="@id/seekTicket" />
+    </fragment>
+    <fragment
+        android:id="@+id/seekMovie"
+        android:name="com.yinghua.jilijili.ui.SeekMovie"
+        android:label="SeekMovie" />
+    <fragment
+        android:id="@+id/seekTicket"
+        android:name="com.yinghua.jilijili.ui.SeekTicket"
+        android:label="SeekTicket" />
+</navigation>

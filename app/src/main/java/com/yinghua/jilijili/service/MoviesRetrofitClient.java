@@ -16,7 +16,7 @@ public class MoviesRetrofitClient {
 
     public MoviesRetrofitClient() {
         retrofit = new Retrofit.Builder()
-                .baseUrl(Consts.DDSP_URL)
+                .baseUrl(Consts.localhost)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }

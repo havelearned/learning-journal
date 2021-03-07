@@ -11,12 +11,13 @@ public class Consts {
 
 
     public static final String REQUEST_STEMAIL="https://api.muxiaoguo.cn/api/";
-    public static final String localhost = "http://192.168.1.4:9999/";
+    public static final String localhost = "http://125.73.67.105:9999/";
 
     //访问服务器获取数据
     public static final String DDSP_URL = "http://121.196.106.152:9999/";
 
     public static final String DDSP_URL_MOVIE2 = "DDSYSystem/modelmovie/param";//获取影片
+    public static final String DDSP_URL_MOVIE_SEEK = "DDSYSystem/modelmovie/search";//搜索影片
 
     public static final String JOURNALISM="https://way.jd.com/jisuapi/";//获取新闻 ?channel=头条&num=10&start=0&appkey=4e69e20b3c7f735e7a6ba1ad250c4ef3
     public static final String NEW_JOUR="https://way.jd.com/jisuapi/newSearch";//?keyword=姚明&appkey=4e69e20b3c7f735e7a6ba1ad250c4ef3

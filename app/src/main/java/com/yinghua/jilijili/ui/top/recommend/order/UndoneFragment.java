@@ -56,7 +56,7 @@ public class UndoneFragment extends Fragment {
             @Override
             public void onRefresh() {
                 if (tel.equals("00000000000")) {
-                    Toast.makeText(getContext(), "未知错误前联系管理员", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "请登录后查看", Toast.LENGTH_SHORT).show();
                 } else {
                     MoviesRetrofitClient.getInstance()
                             .orderforgoodsService()
@@ -84,7 +84,7 @@ public class UndoneFragment extends Fragment {
             }
         });
         if (tel.equals("00000000000")) {
-            Toast.makeText(getContext(), "未知错误前联系管理员", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "请登录后查看", Toast.LENGTH_SHORT).show();
         } else {
             MoviesRetrofitClient.getInstance()
                     .orderforgoodsService()

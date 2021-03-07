@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5sp"
+    android:id="@+id/seek_relativelayout"
+    >
+
+    <ImageView
+        android:id="@+id/iv_seek"
+        android:layout_width="150sp"
+        android:layout_height="150sp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_title_semil" />
+        <TextView
+            android:id="@+id/tv_seekName"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:layout_toRightOf="@+id/iv_seek"
+            android:text="电影名称"
+            android:textColor="@color/black"
+            android:gravity="left"/>
+        <TextView
+            android:id="@+id/tv_seekdaoyan"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:layout_marginTop="40sp"
+            android:text="导演"
+            android:layout_toRightOf="@+id/iv_seek"
+            android:layout_below="@+id/tv_seekName"
+            />
+        <TextView
+            android:id="@+id/seek_time"
+            android:layout_width="match_parent"
+            android:layout_height="30sp"
+            android:text="上映时间"
+            android:layout_toRightOf="@+id/iv_seek"
+            android:layout_below="@+id/tv_seekdaoyan"
+            />
+</RelativeLayout>

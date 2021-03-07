@@ -2,6 +2,7 @@ package com.yinghua.jilijili.ui.buttom.show;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 import com.yinghua.jilijili.OrderActivity;
 import com.yinghua.jilijili.R;
+import com.yinghua.jilijili.SeekActivity;
 import com.yinghua.jilijili.ui.top.boxoffice.BoxofficeFragment;
 import com.yinghua.jilijili.ui.top.comingsoon.ComingSoonFragment;
 import com.yinghua.jilijili.ui.top.recommend.RecommendFragment;
@@ -41,6 +43,7 @@ public class ShowFragment extends Fragment {
     ImageView touxing, to_order;
     ViewPager2 viewPager2;
     TabLayout tableLayout;
+    ImageButton search;
 
     private ShowViewModel showViewModel;
 
@@ -77,6 +80,16 @@ public class ShowFragment extends Fragment {
     private void ImageOnclick(View root) {
         touxing = root.findViewById(R.id.touxing);
         to_order=root.findViewById(R.id.to_order);
+        root.findViewById(R.id.app_search).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), SeekActivity.class);
+                getContext().startActivity(intent);
+
+            }
+        });
+
         touxing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,15 +1,27 @@
 package com.yinghua.jilijili.bean;
 
 
+import android.os.Parcel;
+import android.os.Parcelable;
 
 /**
  *
  * 图片 bean 对象
  * */
-public class Photo {
+public class Photo   {
     private Integer p_id;
     private String p_name;
     private String p_photo;
+
+    protected Photo(Parcel in) {
+        if (in.readByte() == 0) {
+            p_id = null;
+        } else {
+            p_id = in.readInt();
+        }
+        p_name = in.readString();
+        p_photo = in.readString();
+    }
 
     public Photo() {
     }
@@ -46,4 +58,6 @@ public class Photo {
                 ", p_photo='" + p_photo + '\'' +
                 '}';
     }
+
+
 }

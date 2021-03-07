@@ -51,8 +51,6 @@
         <activity android:name=".LocalhostActivity" />
         <activity android:name="com.yinghua.jilijili.OrderActivity" />
         <activity android:name="com.yinghua.jilijili.WEBActivity" />
+        <activity android:name="com.yinghua.jilijili.SeekActivity" />
     </application>
 </manifest>
-
-
-

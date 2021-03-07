@@ -18,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         this.getSupportActionBar().hide();
-      
+        if (WoelcomActivity.activity != null) {
+            WoelcomActivity.activity.finish();
+        }
         BottomNavigationView navigationView = findViewById(R.id.bottomNavigationView);
 
         AppBarConfiguration configuration = new AppBarConfiguration.Builder(R.id.navigation_show, R.id.navigation_movie, R.id.navigation_dynamic).build();

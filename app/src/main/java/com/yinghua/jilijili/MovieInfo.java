@@ -45,6 +45,7 @@ public class MovieInfo extends AppCompatActivity {
         Intent intent = getIntent();
         String[] movies = intent.getStringArrayExtra("movie");
         Glide.with(this).load(movies[5]).into(imageView);
+
         bundle= new Bundle();
         bundle.putStringArray("movies",movies);
         inItViewPage();

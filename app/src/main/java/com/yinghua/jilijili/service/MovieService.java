@@ -17,6 +17,11 @@ import retrofit2.http.Query;
  *
  * */
 public interface MovieService {
+
+
+    @GET(Consts.DDSP_URL_MOVIE_SEEK)
+    Call<List<Movie>> getSeekMovies(@Query("str")String str);
+
     @GET(Consts.DDSP_URL_MOVIE2)
     Call<List<Movie>> getAllMovies(@Query("start") int start,
                               @Query("count") int count);

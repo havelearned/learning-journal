@@ -35,8 +35,8 @@ public class Recommend_movide extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_recommend_movide, container, false);
         recyclerView = view.findViewById(R.id.Recommend_movide_RecyclerView);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.VERTICAL,false));
-        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(),LinearLayoutManager.VERTICAL));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+        recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
         recyclerView.setHasFixedSize(true);
 
         moviePageListAdapter = new MoviePageListAdapter(getContext());
@@ -46,14 +46,14 @@ public class Recommend_movide extends Fragment {
         movieVIewModel.moviePageList.observe(getViewLifecycleOwner(), new Observer<PagedList<Movie>>() {
             @Override
             public void onChanged(PagedList<Movie> movies) {
-                Log.e(Consts.TAG,"数据:"+movies.toString());
+                Log.e(Consts.TAG, "数据:" + movies.toString());
                 moviePageListAdapter.submitList(movies);
             }
         });
         recyclerView.setAdapter(moviePageListAdapter);
 
 
-        PullRefreshLayout pullRefreshLayout =view.findViewById(R.id.pullRefreshLayout);
+        PullRefreshLayout pullRefreshLayout = view.findViewById(R.id.pullRefreshLayout);
         pullRefreshLayout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

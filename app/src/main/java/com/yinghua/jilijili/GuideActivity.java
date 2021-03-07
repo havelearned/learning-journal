@@ -32,6 +32,7 @@ public class GuideActivity extends AppCompatActivity {
     private ViewPager2 vp_guide;
     private Button bu_guide;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
